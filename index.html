@@ -2,244 +2,351 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SDS Portal</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128203;</text></svg>">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        :root{--red:#DC2626;--blue:#1E40AF;--yellow:#F59E0B;--green:#059669;--white:#FFF;--light:#F3F4F6;--dark:#111827;--gray:#6B7280}
+        :root{
+            --bg:#0A0A0A;
+            --bg-card:#151515;
+            --bg-hover:#1F1F1F;
+            --purple:#583AF6;
+            --purple-light:#7B5FFF;
+            --white:#FFFFFF;
+            --text:#FFFFFFD9;
+            --text-dim:#FFFFFF80;
+            --border:#2A2A2A;
+            --danger:#EF4444;
+            --warning:#F59E0B;
+            --success:#22C55E;
+        }
         html{scroll-behavior:smooth}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--light);min-height:100vh;-webkit-tap-highlight-color:transparent}
-
-        /* EMERGENCY BANNER - HUGE tap targets */
-        .emergency{background:var(--red);color:var(--white);padding:16px 12px;text-align:center;position:sticky;top:0;z-index:1000}
-        .emergency h1{font-size:1rem;letter-spacing:0.5px;margin-bottom:8px}
-        .emergency-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-        .emergency-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--white);color:var(--red);padding:14px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:1.25rem;min-height:56px;min-width:140px;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
-        .emergency-btn:active{transform:scale(0.98)}
-        .emergency-sub{margin-top:10px;font-size:0.85rem;opacity:0.95}
-        .emergency-sub a{color:var(--white);text-decoration:underline}
+        body{
+            font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+            background:var(--bg);
+            color:var(--text);
+            min-height:100vh;
+            line-height:1.5;
+            -webkit-font-smoothing:antialiased;
+        }
 
         /* HEADER */
-        header{background:var(--blue);color:var(--white);padding:16px;text-align:center}
-        header h2{font-size:1.5rem;font-weight:700}
-        header p{opacity:0.9;font-size:0.9rem;margin-top:4px}
+        header{
+            padding:24px 20px;
+            border-bottom:1px solid var(--border);
+        }
+        .header-inner{
+            max-width:900px;
+            margin:0 auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+            gap:16px;
+        }
+        header h1{
+            font-size:1.5rem;
+            font-weight:600;
+            letter-spacing:-0.02em;
+            color:var(--white);
+        }
+        header h1 span{
+            color:var(--purple);
+        }
+        .emergency-ref{
+            font-size:0.8rem;
+            color:var(--text-dim);
+        }
+        .emergency-ref strong{
+            color:var(--text);
+        }
 
-        /* SEARCH - prominent and auto-focused */
-        .search{padding:16px;background:var(--white);box-shadow:0 2px 8px rgba(0,0,0,0.08)}
-        .search-box{display:flex;max-width:600px;margin:0 auto}
-        .search-box input{flex:1;padding:16px;font-size:16px;border:2px solid #ddd;border-radius:8px 0 0 8px;outline:none;-webkit-appearance:none}
-        .search-box input:focus{border-color:var(--blue)}
-        .search-box button{padding:16px 20px;background:var(--blue);color:var(--white);border:none;border-radius:0 8px 8px 0;font-size:16px;cursor:pointer}
-        .result-count{text-align:center;padding:8px;color:var(--gray);font-size:0.85rem;display:none}
+        /* SEARCH */
+        .search{
+            padding:20px;
+            background:var(--bg-card);
+            border-bottom:1px solid var(--border);
+        }
+        .search-inner{
+            max-width:900px;
+            margin:0 auto;
+        }
+        .search-box{
+            display:flex;
+            gap:8px;
+        }
+        .search-box input{
+            flex:1;
+            padding:14px 16px;
+            font-size:15px;
+            font-family:inherit;
+            background:var(--bg);
+            border:1px solid var(--border);
+            border-radius:8px;
+            color:var(--white);
+            outline:none;
+            transition:border-color 0.2s;
+        }
+        .search-box input::placeholder{color:var(--text-dim)}
+        .search-box input:focus{border-color:var(--purple)}
+        .search-box button{
+            padding:14px 24px;
+            background:var(--purple);
+            color:var(--white);
+            border:none;
+            border-radius:8px;
+            font-size:15px;
+            font-weight:500;
+            font-family:inherit;
+            cursor:pointer;
+            transition:background 0.2s;
+        }
+        .search-box button:hover{background:var(--purple-light)}
+        .result-count{
+            margin-top:12px;
+            font-size:0.85rem;
+            color:var(--text-dim);
+            display:none;
+        }
 
-        /* MAIN CONTENT */
-        main{max-width:800px;margin:0 auto;padding:16px}
+        /* MAIN */
+        main{
+            max-width:900px;
+            margin:0 auto;
+            padding:20px;
+        }
 
-        /* SECTION HEADERS */
-        .section-title{display:flex;align-items:center;gap:8px;margin:20px 0 12px;padding:0 4px}
-        .section-title h3{font-size:1.1rem;color:var(--dark)}
-
-        /* EMERGENCY CONTACTS SECTION */
-        .contacts{background:var(--white);border-radius:12px;padding:16px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,0.08);border-left:4px solid var(--red)}
-        .contacts h3{color:var(--red);font-size:1rem;margin-bottom:12px}
-        .contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-        @media(max-width:500px){.contact-grid{grid-template-columns:1fr}}
-        .contact-item{background:var(--light);padding:12px;border-radius:8px}
-        .contact-item .label{font-size:0.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px}
-        .contact-item a{display:block;font-size:1.1rem;font-weight:700;color:var(--red);text-decoration:none;margin-top:4px}
-
-        /* PROP 65 WARNING BOX */
-        .prop65-warning{background:#FEF3C7;border-left:4px solid var(--yellow);border-radius:8px;padding:12px;margin-bottom:20px}
-        .prop65-warning h4{color:#92400E;font-size:0.9rem;margin-bottom:8px}
+        /* SECTION LABEL */
+        .section-label{
+            font-size:0.75rem;
+            text-transform:uppercase;
+            letter-spacing:0.08em;
+            color:var(--text-dim);
+            margin:24px 0 12px;
+            padding-left:4px;
+        }
 
         /* CATEGORY */
-        .category{background:var(--white);border-radius:12px;margin-bottom:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
-        .cat-header{padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;color:var(--white);-webkit-user-select:none;user-select:none}
-        .cat-header .arrow{transition:transform 0.2s}
+        .category{
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:10px;
+            margin-bottom:10px;
+            overflow:hidden;
+        }
+        .cat-header{
+            padding:14px 18px;
+            cursor:pointer;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            font-weight:500;
+            font-size:0.95rem;
+            color:var(--white);
+            transition:background 0.15s;
+        }
+        .cat-header:hover{background:var(--bg-hover)}
+        .cat-header .count{
+            font-size:0.8rem;
+            color:var(--text-dim);
+            font-weight:400;
+            margin-left:8px;
+        }
+        .cat-header .arrow{
+            font-size:0.7rem;
+            color:var(--text-dim);
+            transition:transform 0.2s;
+        }
         .category.open .cat-header .arrow{transform:rotate(180deg)}
-        .cat-content{display:none;max-height:0;overflow:hidden}
-        .category.open .cat-content{display:block;max-height:none}
+        .cat-content{display:none}
+        .category.open .cat-content{display:block}
 
-        /* CATEGORY COLORS */
-        .cat-adhesives{background:#DB2777}
-        .cat-coatings{background:#7C3AED}
-        .cat-solvents{background:#2563EB}
-        .cat-lubricants{background:#059669}
-        .cat-cutting{background:#D97706}
-        .cat-electronics{background:#0891B2}
-        .cat-fuels{background:#DC2626}
-        .cat-construction{background:#78716C}
-        .cat-misc{background:#475569}
-        .cat-prop65{background:#F59E0B;color:#78350F}
+        /* CATEGORY ACCENT COLORS */
+        .cat-header.cat-prop65{border-left:3px solid var(--warning)}
+        .cat-header.cat-adhesives{border-left:3px solid #EC4899}
+        .cat-header.cat-coatings{border-left:3px solid #8B5CF6}
+        .cat-header.cat-solvents{border-left:3px solid #3B82F6}
+        .cat-header.cat-lubricants{border-left:3px solid #10B981}
+        .cat-header.cat-cutting{border-left:3px solid #F59E0B}
+        .cat-header.cat-electronics{border-left:3px solid #06B6D4}
+        .cat-header.cat-fuels{border-left:3px solid #EF4444}
+        .cat-header.cat-construction{border-left:3px solid #78716C}
+        .cat-header.cat-misc{border-left:3px solid #6B7280}
 
         /* CHEMICAL ITEM */
-        .chem{padding:14px 16px;border-bottom:1px solid #eee;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-        .chem:last-child{border-bottom:none}
-        .chem-info{flex:1;min-width:200px}
-        .chem-name{font-weight:600;color:var(--dark);font-size:0.95rem}
-        .chem-mfr{font-size:0.8rem;color:var(--gray);margin-top:2px}
-        .chem-badges{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
-        .badge{padding:2px 6px;border-radius:4px;font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.3px}
+        .chem{
+            padding:14px 18px;
+            border-top:1px solid var(--border);
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            align-items:center;
+            transition:background 0.15s;
+        }
+        .chem:hover{background:var(--bg-hover)}
+        .chem-info{flex:1;min-width:220px}
+        .chem-name{
+            font-weight:500;
+            color:var(--white);
+            font-size:0.9rem;
+        }
+        .chem-mfr{
+            font-size:0.8rem;
+            color:var(--text-dim);
+            margin-top:2px;
+        }
+        .chem-badges{
+            display:flex;
+            flex-wrap:wrap;
+            gap:6px;
+            margin-top:6px;
+        }
+        .badge{
+            padding:3px 8px;
+            border-radius:4px;
+            font-size:0.65rem;
+            font-weight:600;
+            text-transform:uppercase;
+            letter-spacing:0.03em;
+        }
         .badge-danger{background:#FEE2E2;color:#B91C1C}
         .badge-warning{background:#FEF3C7;color:#92400E}
         .badge-prop65{background:#FCD34D;color:#78350F}
         .badge-rohs{background:#FCA5A5;color:#7F1D1D}
         .badge-low{background:#D1FAE5;color:#065F46}
-        .sds-btn{padding:10px 16px;background:var(--blue);color:var(--white);text-decoration:none;border-radius:6px;font-size:0.85rem;font-weight:600;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center}
-        .sds-btn:active{background:#1E3A8A}
+
+        .sds-btn{
+            padding:10px 18px;
+            background:transparent;
+            color:var(--purple-light);
+            text-decoration:none;
+            border:1px solid var(--purple);
+            border-radius:6px;
+            font-size:0.8rem;
+            font-weight:500;
+            white-space:nowrap;
+            transition:all 0.2s;
+        }
+        .sds-btn:hover{
+            background:var(--purple);
+            color:var(--white);
+        }
 
         /* RESPONSIVE */
         @media(max-width:600px){
             .chem{flex-direction:column;align-items:flex-start}
-            .sds-btn{width:100%;justify-content:center}
+            .sds-btn{width:100%;text-align:center}
+            .header-inner{flex-direction:column;align-items:flex-start}
         }
 
         /* HIDDEN */
         .hidden{display:none!important}
 
         /* NO RESULTS */
-        .no-results{text-align:center;padding:40px;color:var(--gray)}
-
-        /* FOOTER */
-        footer{text-align:center;padding:20px;color:var(--gray);font-size:0.8rem}
-        footer a{color:var(--blue)}
-
-        /* PRINT */
-        @media print{
-            .emergency,.search{position:relative}
-            .category{break-inside:avoid}
+        .no-results{
+            text-align:center;
+            padding:60px 20px;
+            color:var(--text-dim);
         }
     </style>
 </head>
 <body>
-    <!-- EMERGENCY BANNER -->
-    <div class="emergency">
-        <h1>CHEMICAL EMERGENCY?</h1>
-        <div class="emergency-btns">
-            <a href="tel:911" class="emergency-btn">CALL 911</a>
-            <a href="tel:+18004249300" class="emergency-btn">CHEMTREC</a>
-        </div>
-        <div class="emergency-sub">
-            Poison Control: <a href="tel:+18002221222">1-800-222-1222</a>
-        </div>
-    </div>
-
     <!-- HEADER -->
     <header>
-        <h2>SDS Portal</h2>
-        <p>Safety Data Sheet Quick Reference</p>
+        <div class="header-inner">
+            <h1><span>SDS</span> Portal</h1>
+            <div class="emergency-ref">
+                Emergency: <strong>911</strong> &nbsp;|&nbsp; Poison Control: <strong>1-800-222-1222</strong>
+            </div>
+        </div>
     </header>
 
     <!-- SEARCH -->
     <div class="search">
-        <div class="search-box">
-            <input type="search" id="searchInput" placeholder="Search chemicals..." autocomplete="off" enterkeyhint="search">
-            <button onclick="search()" aria-label="Search">Search</button>
+        <div class="search-inner">
+            <div class="search-box">
+                <input type="search" id="searchInput" placeholder="Search chemicals, manufacturers, CAS numbers..." autocomplete="off" enterkeyhint="search">
+                <button onclick="search()">Search</button>
+            </div>
+            <div class="result-count" id="resultCount"></div>
         </div>
-        <div class="result-count" id="resultCount"></div>
     </div>
 
     <main>
-        <!-- EMERGENCY CONTACTS -->
-        <section class="contacts" id="emergency">
-            <h3>Emergency Contacts</h3>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="label">Emergency</div>
-                    <a href="tel:911">911</a>
+        <!-- PROP 65 CHEMICALS -->
+        <div class="section-label">Prop 65 Listed</div>
+        <div class="category open">
+            <div class="cat-header cat-prop65" onclick="toggle(this)">
+                <span>Prop 65 Chemicals <span class="count">5</span></span>
+                <span class="arrow">&#9660;</span>
+            </div>
+            <div class="cat-content">
+                <div class="chem" data-search="kester solder sn60pb40 lead tin 7439-92-1">
+                    <div class="chem-info">
+                        <div class="chem-name">Solder Wire Sn60Pb40 (LEADED)</div>
+                        <div class="chem-mfr">Kester | CAS: 7439-92-1</div>
+                        <div class="chem-badges">
+                            <span class="badge badge-prop65">PROP 65</span>
+                            <span class="badge badge-rohs">NOT RoHS</span>
+                        </div>
+                    </div>
+                    <a href="https://www.kester.com/products/product/24-6040-0027" target="_blank" class="sds-btn">View SDS</a>
                 </div>
-                <div class="contact-item">
-                    <div class="label">CHEMTREC 24/7</div>
-                    <a href="tel:+18004249300">1-800-424-9300</a>
+                <div class="chem" data-search="osi quad max sealant silica henkel 14808-60-7">
+                    <div class="chem-info">
+                        <div class="chem-name">QUAD MAX Window, Door & Siding Sealant</div>
+                        <div class="chem-mfr">OSI/Henkel | Contains Crystalline Silica</div>
+                        <div class="chem-badges">
+                            <span class="badge badge-prop65">PROP 65</span>
+                            <span class="badge badge-warning">WARNING</span>
+                        </div>
+                    </div>
+                    <a href="https://www.ositough.com" target="_blank" class="sds-btn">View SDS</a>
                 </div>
-                <div class="contact-item">
-                    <div class="label">Poison Control</div>
-                    <a href="tel:+18002221222">1-800-222-1222</a>
+                <div class="chem" data-search="henry 345 floor patch silica cement 14808-60-7">
+                    <div class="chem-info">
+                        <div class="chem-name">345 Premixed Floor Patch</div>
+                        <div class="chem-mfr">Henry | Contains Crystalline Silica</div>
+                        <div class="chem-badges">
+                            <span class="badge badge-prop65">PROP 65</span>
+                            <span class="badge badge-warning">WARNING</span>
+                        </div>
+                    </div>
+                    <a href="https://www.henry.com" target="_blank" class="sds-btn">View SDS</a>
                 </div>
-                <div class="contact-item">
-                    <div class="label">Prop 65 Info</div>
-                    <a href="https://www.p65warnings.ca.gov" target="_blank" rel="noopener">p65warnings.ca.gov</a>
+                <div class="chem" data-search="gorilla contact adhesive ultimate toluene 108-88-3">
+                    <div class="chem-info">
+                        <div class="chem-name">Contact Adhesive Ultimate</div>
+                        <div class="chem-mfr">Gorilla Glue | Contains Toluene</div>
+                        <div class="chem-badges">
+                            <span class="badge badge-prop65">PROP 65</span>
+                            <span class="badge badge-danger">DANGER</span>
+                        </div>
+                    </div>
+                    <a href="https://www.gorillaglue.com/sds/" target="_blank" class="sds-btn">View SDS</a>
+                </div>
+                <div class="chem" data-search="fehr penetrating oil door operator">
+                    <div class="chem-info">
+                        <div class="chem-name">Door & Operator Penetrating Oil</div>
+                        <div class="chem-mfr">Fehr Bros. Industries</div>
+                        <div class="chem-badges">
+                            <span class="badge badge-prop65">PROP 65</span>
+                            <span class="badge badge-danger">DANGER</span>
+                        </div>
+                    </div>
+                    <a href="#" class="sds-btn">View SDS</a>
                 </div>
             </div>
-        </section>
-
-        <!-- PROP 65 WARNING CHEMICALS -->
-        <section id="prop65">
-            <div class="category open">
-                <div class="cat-header cat-prop65" onclick="toggle(this)">
-                    <span>PROP 65 CHEMICALS (5)</span>
-                    <span class="arrow">&#9660;</span>
-                </div>
-                <div class="cat-content">
-                    <div class="chem" data-search="kester solder sn60pb40 lead tin 7439-92-1">
-                        <div class="chem-info">
-                            <div class="chem-name">Solder Wire Sn60Pb40 (LEADED)</div>
-                            <div class="chem-mfr">Kester | CAS: 7439-92-1</div>
-                            <div class="chem-badges">
-                                <span class="badge badge-prop65">PROP 65</span>
-                                <span class="badge badge-rohs">NOT RoHS</span>
-                            </div>
-                        </div>
-                        <a href="https://www.kester.com/products/product/24-6040-0027" target="_blank" class="sds-btn">View SDS</a>
-                    </div>
-                    <div class="chem" data-search="osi quad max sealant silica henkel 14808-60-7">
-                        <div class="chem-info">
-                            <div class="chem-name">QUAD MAX Window, Door & Siding Sealant</div>
-                            <div class="chem-mfr">OSI/Henkel | Contains Crystalline Silica</div>
-                            <div class="chem-badges">
-                                <span class="badge badge-prop65">PROP 65</span>
-                                <span class="badge badge-warning">WARNING</span>
-                            </div>
-                        </div>
-                        <a href="https://www.ositough.com" target="_blank" class="sds-btn">View SDS</a>
-                    </div>
-                    <div class="chem" data-search="henry 345 floor patch silica cement 14808-60-7">
-                        <div class="chem-info">
-                            <div class="chem-name">345 Premixed Floor Patch</div>
-                            <div class="chem-mfr">Henry | Contains Crystalline Silica</div>
-                            <div class="chem-badges">
-                                <span class="badge badge-prop65">PROP 65</span>
-                                <span class="badge badge-warning">WARNING</span>
-                            </div>
-                        </div>
-                        <a href="https://www.henry.com" target="_blank" class="sds-btn">View SDS</a>
-                    </div>
-                    <div class="chem" data-search="gorilla contact adhesive ultimate toluene 108-88-3">
-                        <div class="chem-info">
-                            <div class="chem-name">Contact Adhesive Ultimate</div>
-                            <div class="chem-mfr">Gorilla Glue | Contains Toluene</div>
-                            <div class="chem-badges">
-                                <span class="badge badge-prop65">PROP 65</span>
-                                <span class="badge badge-danger">DANGER</span>
-                            </div>
-                        </div>
-                        <a href="https://www.gorillaglue.com/sds/" target="_blank" class="sds-btn">View SDS</a>
-                    </div>
-                    <div class="chem" data-search="fehr penetrating oil door operator">
-                        <div class="chem-info">
-                            <div class="chem-name">Door & Operator Penetrating Oil</div>
-                            <div class="chem-mfr">Fehr Bros. Industries</div>
-                            <div class="chem-badges">
-                                <span class="badge badge-prop65">PROP 65</span>
-                                <span class="badge badge-danger">DANGER</span>
-                            </div>
-                        </div>
-                        <a href="#" class="sds-btn">View SDS</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
 
         <!-- FULL INDEX -->
-        <div class="section-title">
-            <h3>Full Chemical Index (78 chemicals)</h3>
-        </div>
+        <div class="section-label">Full Index</div>
 
         <!-- ADHESIVES & SEALANTS -->
         <div class="category">
             <div class="cat-header cat-adhesives" onclick="toggle(this)">
-                <span>Adhesives & Sealants (17)</span>
+                <span>Adhesives & Sealants <span class="count">17</span></span>
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
@@ -391,7 +498,7 @@
         <!-- COATINGS & PAINTS -->
         <div class="category">
             <div class="cat-header cat-coatings" onclick="toggle(this)">
-                <span>Coatings & Paints (14)</span>
+                <span>Coatings & Paints <span class="count">14</span></span>
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
@@ -513,7 +620,7 @@
         <!-- SOLVENTS & CLEANERS -->
         <div class="category">
             <div class="cat-header cat-solvents" onclick="toggle(this)">
-                <span>Solvents & Cleaners (9)</span>
+                <span>Solvents & Cleaners <span class="count">9</span></span>
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
@@ -595,7 +702,7 @@
         <!-- LUBRICANTS & GREASES -->
         <div class="category">
             <div class="cat-header cat-lubricants" onclick="toggle(this)">
-                <span>Lubricants & Greases (16)</span>
+                <span>Lubricants & Greases <span class="count">16</span></span>
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
@@ -736,7 +843,7 @@
         <!-- CUTTING FLUIDS -->
         <div class="category">
             <div class="cat-header cat-cutting" onclick="toggle(this)">
-                <span>Cutting & Machining Fluids (7)</span>
+                <span>Cutting & Machining Fluids <span class="count">7</span></span>
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
@@ -802,7 +909,7 @@
         <!-- ELECTRONICS MATERIALS -->
         <div class="category">
             <div class="cat-header cat-electronics" onclick="toggle(this)">
-                <span>Electronics Materials (7)</span>
+                <span>Electronics Materials <span class="count">7</span></span>
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
@@ -871,7 +978,7 @@
         <!-- FUELS & COMPRESSED GAS -->
         <div class="category">
             <div class="cat-header cat-fuels" onclick="toggle(this)">
-                <span>Fuels & Compressed Gas (5)</span>
+                <span>Fuels & Compressed Gas <span class="count">5</span></span>
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
@@ -921,7 +1028,7 @@
         <!-- CONSTRUCTION MATERIALS -->
         <div class="category">
             <div class="cat-header cat-construction" onclick="toggle(this)">
-                <span>Construction Materials (2)</span>
+                <span>Construction Materials <span class="count">2</span></span>
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
@@ -950,7 +1057,7 @@
         <!-- MISCELLANEOUS -->
         <div class="category">
             <div class="cat-header cat-misc" onclick="toggle(this)">
-                <span>Miscellaneous (1)</span>
+                <span>Miscellaneous <span class="count">1</span></span>
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
@@ -965,29 +1072,15 @@
             </div>
         </div>
 
-        <!-- NO RESULTS MESSAGE -->
+        <!-- NO RESULTS -->
         <div class="no-results hidden" id="noResults">
             No chemicals found matching your search.
         </div>
     </main>
 
-    <footer>
-        <p>SDS Portal | 78 Chemicals | Updated January 2025</p>
-        <p style="margin-top:8px">For emergencies, always call 911 first</p>
-    </footer>
-
     <script>
-        // Auto-focus search on mobile
-        if(/Mobi|Android/i.test(navigator.userAgent)){
-            document.getElementById('searchInput').focus();
-        }
+        function toggle(h){h.parentElement.classList.toggle('open')}
 
-        // Toggle category
-        function toggle(h){
-            h.parentElement.classList.toggle('open');
-        }
-
-        // Search functionality
         function search(){
             const q=document.getElementById('searchInput').value.toLowerCase().trim();
             const items=document.querySelectorAll('.chem');
@@ -1003,27 +1096,22 @@
                 if(match)count++;
             });
 
-            // Open categories with visible items
             cats.forEach(cat=>{
                 const vis=cat.querySelectorAll('.chem:not(.hidden)').length;
                 if(q&&vis>0)cat.classList.add('open');
-                // Hide empty categories
                 cat.style.display=vis===0&&q?'none':'block';
             });
 
-            // Show/hide no results
             noRes.classList.toggle('hidden',count>0||!q);
 
-            // Show result count
             if(q){
-                countEl.textContent=count+' chemical'+(count!==1?'s':'')+' found';
+                countEl.textContent=count+' result'+(count!==1?'s':'');
                 countEl.style.display='block';
             }else{
                 countEl.style.display='none';
             }
         }
 
-        // Search on input
         document.getElementById('searchInput').addEventListener('input',search);
         document.getElementById('searchInput').addEventListener('keypress',e=>{
             if(e.key==='Enter')search();
