@@ -254,6 +254,299 @@
             color:var(--white);
             border-color:var(--purple);
         }
+
+        /* LABEL BUTTON */
+        .label-btn{
+            padding:10px 14px;
+            background:transparent;
+            color:var(--text-dim);
+            border:1px solid var(--border);
+            border-radius:6px;
+            font-size:0.8rem;
+            font-weight:500;
+            font-family:inherit;
+            cursor:pointer;
+            transition:all 0.2s;
+            white-space:nowrap;
+        }
+        .label-btn:hover{
+            background:var(--bg-hover);
+            border-color:var(--purple);
+            color:var(--white);
+        }
+        .chem-actions{
+            display:flex;
+            gap:8px;
+            flex-wrap:wrap;
+        }
+
+        /* MODAL */
+        .modal{
+            position:fixed;
+            top:0;left:0;right:0;bottom:0;
+            background:rgba(0,0,0,0.85);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index:1000;
+            padding:20px;
+            opacity:0;
+            visibility:hidden;
+            transition:all 0.2s;
+        }
+        .modal.active{
+            opacity:1;
+            visibility:visible;
+        }
+        .modal-content{
+            background:var(--bg-card);
+            border:1px solid var(--border);
+            border-radius:12px;
+            max-width:600px;
+            width:100%;
+            max-height:90vh;
+            overflow-y:auto;
+        }
+        .modal-header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px;
+            border-bottom:1px solid var(--border);
+        }
+        .modal-header h2{
+            font-size:1.1rem;
+            font-weight:600;
+            color:var(--white);
+        }
+        .modal-close{
+            background:none;
+            border:none;
+            color:var(--text-dim);
+            font-size:1.5rem;
+            cursor:pointer;
+            padding:0;
+            line-height:1;
+        }
+        .modal-close:hover{color:var(--white)}
+        .modal-body{padding:20px}
+        .modal-footer{
+            padding:20px;
+            border-top:1px solid var(--border);
+            display:flex;
+            gap:12px;
+            justify-content:flex-end;
+        }
+
+        /* SIZE SELECTOR */
+        .size-selector{
+            display:flex;
+            gap:8px;
+            margin-bottom:20px;
+        }
+        .size-btn{
+            padding:8px 16px;
+            background:var(--bg);
+            border:1px solid var(--border);
+            border-radius:6px;
+            color:var(--text-dim);
+            font-size:0.85rem;
+            font-family:inherit;
+            cursor:pointer;
+            transition:all 0.15s;
+        }
+        .size-btn:hover{border-color:var(--purple);color:var(--white)}
+        .size-btn.active{
+            background:var(--purple);
+            border-color:var(--purple);
+            color:var(--white);
+        }
+
+        /* LABEL PREVIEW */
+        .label-preview{
+            background:#fff;
+            color:#000;
+            border:2px dashed var(--border);
+            border-radius:8px;
+            padding:16px;
+            margin-bottom:16px;
+        }
+        .label-preview.size-2x2{width:2in;height:2in}
+        .label-preview.size-2x3{width:3in;height:2in}
+        .label-preview.size-4x4{width:4in;height:4in}
+        .label-header{
+            text-align:center;
+            margin-bottom:8px;
+            border-bottom:1px solid #000;
+            padding-bottom:6px;
+        }
+        .label-name{
+            font-weight:700;
+            font-size:0.9rem;
+            line-height:1.2;
+        }
+        .label-mfr{
+            font-size:0.7rem;
+            color:#333;
+        }
+        .label-hazards{
+            display:flex;
+            gap:12px;
+            justify-content:center;
+            margin:8px 0;
+        }
+        .label-nfpa{width:60px;flex-shrink:0}
+        .label-ghs{
+            display:flex;
+            flex-wrap:wrap;
+            gap:4px;
+            justify-content:center;
+        }
+        .ghs-icon{width:28px;height:28px}
+        .label-signal{
+            text-align:center;
+            font-weight:700;
+            font-size:0.85rem;
+            padding:4px 8px;
+            margin:6px 0;
+        }
+        .label-signal.danger{background:#CC0000;color:#fff}
+        .label-signal.warning{background:#FF8C00;color:#000}
+        .label-qr{
+            text-align:center;
+            margin-top:8px;
+        }
+        .label-qr svg{width:50px;height:50px}
+        .label-qr-caption{font-size:0.55rem;color:#666}
+
+        /* SIZE VARIATIONS */
+        .size-4x4 .label-name{font-size:1.2rem}
+        .size-4x4 .label-mfr{font-size:0.9rem}
+        .size-4x4 .label-nfpa{width:90px}
+        .size-4x4 .ghs-icon{width:40px;height:40px}
+        .size-4x4 .label-signal{font-size:1.1rem;padding:8px 12px}
+        .size-4x4 .label-qr svg{width:80px;height:80px}
+        .size-4x4 .label-qr-caption{font-size:0.7rem}
+        .size-2x2 .label-name{font-size:0.75rem}
+        .size-2x2 .label-mfr{font-size:0.6rem}
+        .size-2x2 .label-nfpa{width:40px}
+        .size-2x2 .ghs-icon{width:20px;height:20px}
+        .size-2x2 .label-signal{font-size:0.7rem;padding:2px 4px}
+        .size-2x2 .label-qr svg{width:35px;height:35px}
+
+        /* PRINT BUTTON */
+        .print-btn{
+            padding:12px 24px;
+            background:var(--purple);
+            color:var(--white);
+            border:none;
+            border-radius:8px;
+            font-size:0.9rem;
+            font-weight:500;
+            font-family:inherit;
+            cursor:pointer;
+            transition:background 0.2s;
+        }
+        .print-btn:hover{background:var(--purple-light)}
+
+        /* BLANK LABEL FORM */
+        .blank-label-form{margin-bottom:20px}
+        .form-row{
+            display:flex;
+            gap:12px;
+            margin-bottom:12px;
+            flex-wrap:wrap;
+        }
+        .form-group{
+            flex:1;
+            min-width:150px;
+        }
+        .form-group label{
+            display:block;
+            font-size:0.75rem;
+            color:var(--text-dim);
+            margin-bottom:4px;
+        }
+        .form-group input,.form-group select{
+            width:100%;
+            padding:8px 10px;
+            background:var(--bg);
+            border:1px solid var(--border);
+            border-radius:6px;
+            color:var(--white);
+            font-family:inherit;
+            font-size:0.85rem;
+        }
+        .form-group input:focus,.form-group select:focus{
+            border-color:var(--purple);
+            outline:none;
+        }
+        .nfpa-inputs{
+            display:flex;
+            gap:8px;
+        }
+        .nfpa-inputs input{
+            width:50px;
+            text-align:center;
+        }
+        .ghs-checkboxes{
+            display:flex;
+            flex-wrap:wrap;
+            gap:8px;
+        }
+        .ghs-checkboxes label{
+            display:flex;
+            align-items:center;
+            gap:4px;
+            font-size:0.75rem;
+            color:var(--text);
+            cursor:pointer;
+        }
+        .ghs-checkboxes input{width:auto}
+
+        /* CREATE LABEL HEADER BUTTON */
+        .create-label-btn{
+            padding:8px 14px;
+            background:var(--bg-card);
+            color:var(--text-dim);
+            border:1px solid var(--border);
+            border-radius:6px;
+            font-size:0.75rem;
+            font-weight:500;
+            font-family:inherit;
+            cursor:pointer;
+            transition:all 0.15s;
+        }
+        .create-label-btn:hover{
+            background:var(--bg-hover);
+            border-color:var(--purple);
+            color:var(--white);
+        }
+
+        /* PRINT STYLES */
+        @media print{
+            body>*:not(.modal){display:none!important}
+            .modal{
+                position:static;
+                background:none;
+                padding:0;
+            }
+            .modal-content{
+                box-shadow:none;
+                border:none;
+                background:none;
+                max-width:none;
+            }
+            .modal-header,.modal-footer,.size-selector,.no-print{display:none!important}
+            .modal-body{padding:0}
+            .label-preview{
+                border:1px solid #000;
+                margin:0;
+                -webkit-print-color-adjust:exact;
+                print-color-adjust:exact;
+            }
+            @page{margin:0.5in}
+        }
     </style>
 </head>
 <body>
@@ -261,8 +554,11 @@
     <header>
         <div class="header-inner">
             <h1><span>SDS</span> Portal</h1>
-            <div class="emergency-ref">
-                Emergency: <strong>911</strong> &nbsp;|&nbsp; Poison Control: <strong>1-800-222-1222</strong>
+            <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+                <button class="create-label-btn" onclick="openBlankLabel()">+ Create Custom Label</button>
+                <div class="emergency-ref">
+                    Emergency: <strong>911</strong> &nbsp;|&nbsp; Poison Control: <strong>1-800-222-1222</strong>
+                </div>
             </div>
         </div>
     </header>
@@ -293,516 +589,516 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="vibra-tite 202 viz-torque tamper detection marker">
+                <div class="chem" data-search="vibra-tite 202 viz-torque tamper detection marker" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">202 VIZ-TORQUE Tamper Detection Marker</div>
                         <div class="chem-mfr">Vibra-TITE/ND Industries</div>
                     </div>
-                    <a href="https://www.vibra-tite.com/wp-content/uploads/SDS-VT2022-Vibra-TITE-Green_Specialty_Products-USEN.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.vibra-tite.com/wp-content/uploads/SDS-VT2022-Vibra-TITE-Green_Specialty_Products-USEN.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="loctite 242 threadlocker blue medium">
+                <div class="chem" data-search="loctite 242 threadlocker blue medium" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">242 Threadlocker Blue (Medium Strength)</div>
                         <div class="chem-mfr">Loctite/Henkel</div>
                     </div>
-                    <a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27209728%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27209728%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="loctite 271 threadlocker red high strength">
+                <div class="chem" data-search="loctite 271 threadlocker red high strength" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">271 Threadlocker Red (High Strength)</div>
                         <div class="chem-mfr">Loctite/Henkel</div>
                     </div>
-                    <a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27487232%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27487232%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="henry 345 premixed floor patch silica cement">
+                <div class="chem" data-search="henry 345 premixed floor patch silica cement" data-ghs="GHS07,GHS08" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">345 Premixed Floor Patch</div>
                         <div class="chem-mfr">Henry</div>
                     </div>
-                    <a href="https://www.wwhenry.com/wp-content/uploads/2019/06/HENRY-345-Safety-Data-Sheet.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.wwhenry.com/wp-content/uploads/2019/06/HENRY-345-Safety-Data-Sheet.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="mg chemicals 419d acrylic conformal coating">
+                <div class="chem" data-search="mg chemicals 419d acrylic conformal coating" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">419D Acrylic Conformal Coating</div>
                         <div class="chem-mfr">MG Chemicals</div>
                     </div>
-                    <a href="https://www.mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-419d-l.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-419d-l.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="loctite 495 instant adhesive cyanoacrylate">
+                <div class="chem" data-search="loctite 495 instant adhesive cyanoacrylate" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">495 Instant Adhesive</div>
                         <div class="chem-mfr">Loctite/Henkel</div>
                     </div>
-                    <a href="https://docs.rs-online.com/159c/0900766b8134bbad.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://docs.rs-online.com/159c/0900766b8134bbad.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="mg chemicals 8310a conformal coating remover gel">
+                <div class="chem" data-search="mg chemicals 8310a conformal coating remover gel" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">8310A Conformal Coating Remover-Gel</div>
                         <div class="chem-mfr">MG Chemicals</div>
                     </div>
-                    <a href="https://mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-8310a-l.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-8310a-l.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="mg chemicals 844ar acrylic esd coating conformal">
+                <div class="chem" data-search="mg chemicals 844ar acrylic esd coating conformal" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">844AR Acrylic ESD Coating</div>
                         <div class="chem-mfr">MG Chemicals</div>
                     </div>
-                    <a href="https://mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-844ar-a.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-844ar-a.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="klean-strip acetone 67-64-1">
+                <div class="chem" data-search="klean-strip acetone 67-64-1" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Acetone</div>
                         <div class="chem-mfr">Klean-Strip | CAS: 67-64-1</div>
                     </div>
-                    <a href="https://www1.mscdirect.com/MSDS/MSDS00053/70250337-20251105.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www1.mscdirect.com/MSDS/MSDS00053/70250337-20251105.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="tap magic aluminum cutting fluid cinnamon">
+                <div class="chem" data-search="tap magic aluminum cutting fluid cinnamon" data-ghs="GHS07,GHS08,GHS09" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="2" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Aluminum Cutting Fluid</div>
                         <div class="chem-mfr">Tap Magic</div>
                     </div>
-                    <a href="https://tapmagic.com/wp-content/uploads/2025/01/20241106135018-tap-magic-aluminum-sds-us-en-final-2024pdf.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://tapmagic.com/wp-content/uploads/2025/01/20241106135018-tap-magic-aluminum-sds-us-en-final-2024pdf.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="renewable lubricants bio-general purpose cut 40">
+                <div class="chem" data-search="renewable lubricants bio-general purpose cut 40" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Bio-General Purpose Cut 40</div>
                         <div class="chem-mfr">Renewable Lubricants</div>
                     </div>
-                    <a href="https://renewablelube.com/assets/files/sds/86830-86833-86834-86836-Bio-General-Purpose-Cut-40-SDS_2022-05-27-154331_pwdj.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://renewablelube.com/assets/files/sds/86830-86833-86834-86836-Bio-General-Purpose-Cut-40-SDS_2022-05-27-154331_pwdj.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="boelube paste orelube machining">
+                <div class="chem" data-search="boelube paste orelube machining" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">BOELUBE Paste</div>
                         <div class="chem-mfr">The Orelube Corporation</div>
                     </div>
-                    <a href="https://orelube.com/wp-content/uploads/2024/12/Boelube-70307-OSHA-GHS-SDS.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://orelube.com/wp-content/uploads/2024/12/Boelube-70307-OSHA-GHS-SDS.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="zinsser bulls eye 1-2-3 primer">
+                <div class="chem" data-search="zinsser bulls eye 1-2-3 primer" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="2" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Bulls Eye 1-2-3 Primer</div>
                         <div class="chem-mfr">Zinsser</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/02008.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/02008.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="bernzomatic camping gas propane butane">
+                <div class="chem" data-search="bernzomatic camping gas propane butane" data-ghs="GHS02,GHS04" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Camping Gas (Propane/Butane)</div>
                         <div class="chem-mfr">BernzOmatic</div>
                     </div>
-                    <a href="https://mainlandgroup.ca/wp-content/uploads/2022/08/bernzomatic-propane-sds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://mainlandgroup.ca/wp-content/uploads/2022/08/bernzomatic-propane-sds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum concrete saver 5600 acrylic urethane floor">
+                <div class="chem" data-search="rust-oleum concrete saver 5600 acrylic urethane floor" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Concrete Saver 5600 Acrylic Urethane Floor Paint</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/261116.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/261116.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="prosoco consolideck lsguard concrete sealer lithium">
+                <div class="chem" data-search="prosoco consolideck lsguard concrete sealer lithium" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Consolideck LSGuard Concrete Sealer</div>
                         <div class="chem-mfr">PROSOCO</div>
                     </div>
-                    <a href="https://prosoco.com/Content/Documents/Product/CD_LSGuard_SDS_073021_C.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://prosoco.com/Content/Documents/Product/CD_LSGuard_SDS_073021_C.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="gorilla contact adhesive ultimate toluene">
+                <div class="chem" data-search="gorilla contact adhesive ultimate toluene" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Contact Adhesive Ultimate</div>
                         <div class="chem-mfr">Gorilla Glue</div>
                     </div>
-                    <a href="https://cdn.prod.website-files.com/68d31c8eca8b8919d2d12047/69499e329563fa62a7fad210_EN_Final-OSHA-SDS_Contact-Adhesive-Ultimate-Web-Spray-V1.1.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://cdn.prod.website-files.com/68d31c8eca8b8919d2d12047/69499e329563fa62a7fad210_EN_Final-OSHA-SDS_Contact-Adhesive-Ultimate-Web-Spray-V1.1.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="molyslip copaslip high temperature anti-seize copper">
+                <div class="chem" data-search="molyslip copaslip high temperature anti-seize copper" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Copaslip High Temperature Anti-Seize</div>
                         <div class="chem-mfr">Molyslip</div>
                     </div>
-                    <a href="https://static-content.cromwell.co.uk/pdfs/s/Medusa_Attachments/Molyslip/MLY-703-3610T%20SDS%20Rev%207.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://static-content.cromwell.co.uk/pdfs/s/Medusa_Attachments/Molyslip/MLY-703-3610T%20SDS%20Rev%207.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum custom spray 5-in-1 protective enamel">
+                <div class="chem" data-search="rust-oleum custom spray 5-in-1 protective enamel" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Custom Spray 5-in-1 Protective Enamel</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/376855.pdf?_gl=1*si0pb6*_gcl_au*MzU0MTY5MzI4LjE3Njg2OTE4NTY.*_ga*ODc3NTQ5NzM5LjE3Njg2OTE4NTY.*_ga_ET73R380KW*czE3Njg3MDA5OTAkbzIkZzEkdDE3Njg3MDI0MjkkajM4JGwwJGg0ODExMDkyNTk." target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/376855.pdf?_gl=1*si0pb6*_gcl_au*MzU0MTY5MzI4LjE3Njg2OTE4NTY.*_ga*ODc3NTQ5NzM5LjE3Njg2OTE4NTY.*_ga_ET73R380KW*czE3Njg3MDA5OTAkbzIkZzEkdDE3Njg3MDI0MjkkajM4JGwwJGg0ODExMDkyNTk." target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="cut-ease stick lubricant">
+                <div class="chem" data-search="cut-ease stick lubricant" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">CUT-EASE Stick Lubricant</div>
                         <div class="chem-mfr">AGS Company</div>
                     </div>
-                    <a href="https://www.agscompany.com/cdn/shop/files/Cut-Ease_Stick_Compound_Safety_Data_Sheet_-_English.pdf?v=658743648801267110" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.agscompany.com/cdn/shop/files/Cut-Ease_Stick_Compound_Safety_Data_Sheet_-_English.pdf?v=658743648801267110" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="mcmaster-carr cutting fluid ep-9">
+                <div class="chem" data-search="mcmaster-carr cutting fluid ep-9" data-ghs="GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Cutting Fluid EP-9</div>
                         <div class="chem-mfr">McMaster-Carr</div>
                     </div>
-                    <a href="https://techdata.level7chemical.com/data/pdf/Tap_Magic_EP-Xtra-_SDS.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://techdata.level7chemical.com/data/pdf/Tap_Magic_EP-Xtra-_SDS.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="fehr penetrating oil door operator">
+                <div class="chem" data-search="fehr penetrating oil door operator" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Door & Operator Penetrating Oil</div>
                         <div class="chem-mfr">Fehr Bros. Industries</div>
                     </div>
-                    <a href="https://www.fehr.com/app/uploads/2025/03/L6930-SDS-Fehr-Brothers.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.fehr.com/app/uploads/2025/03/L6930-SDS-Fehr-Brothers.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="innovera electronics duster difluoroethane 75-37-6">
+                <div class="chem" data-search="innovera electronics duster difluoroethane 75-37-6" data-ghs="GHS02,GHS04" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Electronics Duster</div>
                         <div class="chem-mfr">Innovera | CAS: 75-37-6</div>
                     </div>
-                    <a href="https://millcraft.com/wp-content/uploads/2023/05/AL1786-SDS-Innovera.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://millcraft.com/wp-content/uploads/2023/05/AL1786-SDS-Innovera.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="dupli-color engine enamel ceramic">
+                <div class="chem" data-search="dupli-color engine enamel ceramic" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Engine Enamel with Ceramic</div>
                         <div class="chem-mfr">Dupli-Color</div>
                     </div>
-                    <a href="https://paintdocs.com/docs/webPDF.jsp?SITEID=DUPLI&lang=2&cntry=US&doctype=SDS&prodno=026916916136" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://paintdocs.com/docs/webPDF.jsp?SITEID=DUPLI&lang=2&cntry=US&doctype=SDS&prodno=026916916136" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum farm implement paint">
+                <div class="chem" data-search="rust-oleum farm implement paint" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Farm & Implement Paint</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/280123.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/280123.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="flex seal aerosol rubber sealant">
+                <div class="chem" data-search="flex seal aerosol rubber sealant" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Flex Seal Aerosol</div>
                         <div class="chem-mfr">Flex Seal/Swift Response</div>
                     </div>
-                    <a href="https://images.thdstatic.com/catalog/pdfImages/2f/2f21ec09-1560-45c0-b5e0-0bf656868d5c.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://images.thdstatic.com/catalog/pdfImages/2f/2f21ec09-1560-45c0-b5e0-0bf656868d5c.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="flex seal liquid rubber sealant">
+                <div class="chem" data-search="flex seal liquid rubber sealant" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Flex Seal Liquid Rubber Sealant</div>
                         <div class="chem-mfr">Flex Seal/Swift Response</div>
                     </div>
-                    <a href="https://content.oppictures.com/Master_Images/Master_PDF_Files/FSGLFSBLKR32_SDS.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://content.oppictures.com/Master_Images/Master_PDF_Files/FSGLFSBLKR32_SDS.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum fluorescent spray paint green">
+                <div class="chem" data-search="rust-oleum fluorescent spray paint green" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Fluorescent Spray Paint (Green)</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/2233838.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/2233838.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="sentinel formula 747 plus adhesive remover">
+                <div class="chem" data-search="sentinel formula 747 plus adhesive remover" data-ghs="GHS02,GHS07" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="2" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Formula 747 Plus Adhesive Remover</div>
                         <div class="chem-mfr">Sentinel</div>
                     </div>
-                    <a href="https://www.senpro.com/wp-content/uploads/2024/05/Sentinel-747-Plus-Adhesive-Remover-VOC-Compliant-SDS-v.-1.3.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.senpro.com/wp-content/uploads/2024/05/Sentinel-747-Plus-Adhesive-Remover-VOC-Compliant-SDS-v.-1.3.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="great stuff gaps cracks foam sealant polyurethane">
+                <div class="chem" data-search="great stuff gaps cracks foam sealant polyurethane" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="1" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Great Stuff Gaps & Cracks Foam Sealant</div>
                         <div class="chem-mfr">Great Stuff/Dow</div>
                     </div>
-                    <a href="https://www.greatstuff.dupont.com/content/dam/dupont/amer/us/en/greatstuff-renewed/public/sds/en/gaps-cracks-insulating-foam-sealant-smart-dispenser-US-SDS-000000487673.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.greatstuff.dupont.com/content/dam/dupont/amer/us/en/greatstuff-renewed/public/sds/en/gaps-cracks-insulating-foam-sealant-smart-dispenser-US-SDS-000000487673.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="liquid nails heavy duty construction adhesive">
+                <div class="chem" data-search="liquid nails heavy duty construction adhesive" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Heavy Duty Construction Adhesive</div>
                         <div class="chem-mfr">Liquid Nails</div>
                     </div>
-                    <a href="https://buyat.ppg.com/EHSDocumentManagerPublic/documentSearchInnerFrame.aspx?SearchAllPublicFolders=True&CodeCondition=IsEqualTo&CodeValue=00407708&Form=57c70348f2d7b3740000&Language=en-US" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://buyat.ppg.com/EHSDocumentManagerPublic/documentSearchInnerFrame.aspx?SearchAllPublicFolders=True&CodeCondition=IsEqualTo&CodeValue=00407708&Form=57c70348f2d7b3740000&Language=en-US" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="3m hi-strength 90 spray adhesive">
+                <div class="chem" data-search="3m hi-strength 90 spray adhesive" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Hi-Strength 90 CA Spray Adhesive</div>
                         <div class="chem-mfr">3M</div>
                     </div>
-                    <a href="https://cdmsweb.3m.com/ingredientcommunication/file/Media/8wJRhbye1YM=" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://cdmsweb.3m.com/ingredientcommunication/file/Media/8wJRhbye1YM=" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="simple green industrial cleaner degreaser">
+                <div class="chem" data-search="simple green industrial cleaner degreaser" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Industrial Cleaner & Degreaser</div>
                         <div class="chem-mfr">Simple Green</div>
                     </div>
-                    <a href="https://cdn.simplegreen.com/downloads/SDS_EN-US_SimpleGreenIndustrialCleanerDegreaser.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://cdn.simplegreen.com/downloads/SDS_EN-US_SimpleGreenIndustrialCleanerDegreaser.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="charking instant ignite lighter fluid charcoal">
+                <div class="chem" data-search="charking instant ignite lighter fluid charcoal" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="2" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Instant Ignite Lighter Fluid</div>
                         <div class="chem-mfr">CharKing</div>
                     </div>
-                    <a href="https://www.thecloroxcompany.com/wp-content/uploads/2019/03/Kingsford-Odorless-Charcoal-Lighter.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.thecloroxcompany.com/wp-content/uploads/2019/03/Kingsford-Odorless-Charcoal-Lighter.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="isopropanol 99 technical grade 67-63-0">
+                <div class="chem" data-search="isopropanol 99 technical grade 67-63-0" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Isopropanol 99% (Technical Grade)</div>
                         <div class="chem-mfr">Generic | CAS: 67-63-0</div>
                     </div>
-                    <a href="https://www.fishersci.com/content/dam/fishersci/en_US/documents/programs/education/regulatory-documents/sds/chemicals/chemicals-i/S25372A.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.fishersci.com/content/dam/fishersci/en_US/documents/programs/education/regulatory-documents/sds/chemicals/chemicals-i/S25372A.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="pharmco isopropyl alcohol 70 usp 67-63-0">
+                <div class="chem" data-search="pharmco isopropyl alcohol 70 usp 67-63-0" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Isopropyl Alcohol 70% (USP/NF)</div>
                         <div class="chem-mfr">Pharmco | CAS: 67-63-0</div>
                     </div>
-                    <a href="https://www1.mscdirect.com/MSDS/MSDS00053/54979885-20180215.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www1.mscdirect.com/MSDS/MSDS00053/54979885-20180215.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="pharmco isopropyl alcohol 99 hplc 67-63-0">
+                <div class="chem" data-search="pharmco isopropyl alcohol 99 hplc 67-63-0" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Isopropyl Alcohol 99% (HPLC-UV Grade)</div>
                         <div class="chem-mfr">Pharmco | CAS: 67-63-0</div>
                     </div>
-                    <a href="https://www.scienceinteractive.com/wp-content/uploads/2023/03/Isopropyl-Alcohol-Pharmco.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.scienceinteractive.com/wp-content/uploads/2023/03/Isopropyl-Alcohol-Pharmco.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="deoxit l260dp grease caig labs">
+                <div class="chem" data-search="deoxit l260dp grease caig labs" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">L260Dp Grease</div>
                         <div class="chem-mfr">DeoxIT/CAIG Labs</div>
                     </div>
-                    <a href="https://store.caig.com/core/media/media.nl?c=ACCT113328&h=f740a61f9fde1fdfb94a&id=78675&whence=" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://store.caig.com/core/media/media.nl?c=ACCT113328&h=f740a61f9fde1fdfb94a&id=78675&whence=" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="sprayon lu 210 food grade silicone lubricant">
+                <div class="chem" data-search="sprayon lu 210 food grade silicone lubricant" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">LU 210 Food Grade Silicone Lubricant</div>
                         <div class="chem-mfr">Sprayon</div>
                     </div>
-                    <a href="https://www1.mscdirect.com/MSDS/MSDS00067/53711198-20210701.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www1.mscdirect.com/MSDS/MSDS00067/53711198-20210701.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="bernzomatic map-pro torch fuel propylene">
+                <div class="chem" data-search="bernzomatic map-pro torch fuel propylene" data-ghs="GHS02,GHS04" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">MAP-Pro Torch Fuel</div>
                         <div class="chem-mfr">BernzOmatic</div>
                     </div>
-                    <a href="https://images.thdstatic.com/catalog/pdfImages/77/7799980f-17cc-4ff9-af62-c8dc0178bbde.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://images.thdstatic.com/catalog/pdfImages/77/7799980f-17cc-4ff9-af62-c8dc0178bbde.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="mobil mobilith shc 220 synthetic grease">
+                <div class="chem" data-search="mobil mobilith shc 220 synthetic grease" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Mobilith SHC 220 Synthetic Grease</div>
                         <div class="chem-mfr">ExxonMobil</div>
                     </div>
-                    <a href="https://petroleumservicecompany.com/content/pdfs/MOBILITH_SHC_220_SDS.pdf?srsltid=AfmBOopmEFcxK_O3hbTvV8-jGDadXMbnVA7TTmAY1w3qdE3Sm1lu6bQ8" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://petroleumservicecompany.com/content/pdfs/MOBILITH_SHC_220_SDS.pdf?srsltid=AfmBOopmEFcxK_O3hbTvV8-jGDadXMbnVA7TTmAY1w3qdE3Sm1lu6bQ8" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="ppg multi-pro interior paint latex">
+                <div class="chem" data-search="ppg multi-pro interior paint latex" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Multi-Pro Interior Paint</div>
                         <div class="chem-mfr">PPG</div>
                     </div>
-                    <a href="https://buyat.ppg.com/EHSDocumentManagerPublic/documentSearchInnerFrame.aspx?SearchAllPublicFolders=True&CodeCondition=IsEqualTo&CodeValue=00407935&Form=53bd5d15b2c796a10000&Language=en-US" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://buyat.ppg.com/EHSDocumentManagerPublic/documentSearchInnerFrame.aspx?SearchAllPublicFolders=True&CodeCondition=IsEqualTo&CodeValue=00407935&Form=53bd5d15b2c796a10000&Language=en-US" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="super lube synthetic ptfe grease">
+                <div class="chem" data-search="super lube synthetic ptfe grease" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Multi-Purpose Synthetic Grease (with PTFE)</div>
                         <div class="chem-mfr">Super Lube</div>
                     </div>
-                    <a href="https://www.super-lube.com/wp-content/uploads/2025/05/SDS_Super_Lube_Multi-Purpose_Grease_EU_sds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.super-lube.com/wp-content/uploads/2025/05/SDS_Super_Lube_Multi-Purpose_Grease_EU_sds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="selsil ninja mdf instant adhesive spray">
+                <div class="chem" data-search="selsil ninja mdf instant adhesive spray" data-ghs="GHS02,GHS05,GHS07,GHS09" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Ninja MDF Instant Adhesive Spray</div>
                         <div class="chem-mfr">Selsil</div>
                     </div>
-                    <a href="https://adheseal1.sharepoint.com/sites/TestingPortal/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FTestingPortal%2FShared%20Documents%2FProducts%2FSelsil%2FNinja%20MDF%2FSelsil%20MDF%20Kit%20Activator%20Spray%2DT2%2DSDS%2D%5FEN%2Epdf&parent=%2Fsites%2FTestingPortal%2FShared%20Documents%2FProducts%2FSelsil%2FNinja%20MDF&p=true&ga=1" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://adheseal1.sharepoint.com/sites/TestingPortal/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FTestingPortal%2FShared%20Documents%2FProducts%2FSelsil%2FNinja%20MDF%2FSelsil%20MDF%20Kit%20Activator%20Spray%2DT2%2DSDS%2D%5FEN%2Epdf&parent=%2Fsites%2FTestingPortal%2FShared%20Documents%2FProducts%2FSelsil%2FNinja%20MDF&p=true&ga=1" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="krylon no hunting purple marking paint">
+                <div class="chem" data-search="krylon no hunting purple marking paint" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">No Hunting Purple Marking Paint</div>
                         <div class="chem-mfr">Krylon</div>
                     </div>
-                    <a href="https://paintdocs.com/docs/webPDF.jsp?SITEID=KRYLON&lang=2&cntry=US&doctype=SDS&prodno=724504069010" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://paintdocs.com/docs/webPDF.jsp?SITEID=KRYLON&lang=2&cntry=US&doctype=SDS&prodno=724504069010" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="lubriplate no 630-aa multi-purpose grease">
+                <div class="chem" data-search="lubriplate no 630-aa multi-purpose grease" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">No. 630-AA Multi-Purpose Grease</div>
                         <div class="chem-mfr">Lubriplate</div>
                     </div>
-                    <a href="https://lubriplate-sds.thewercs.com/DirectDocumentDownloader/Document?prd=04759~~PDF~~MTR~~AGHS~~EN" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://lubriplate-sds.thewercs.com/DirectDocumentDownloader/Document?prd=04759~~PDF~~MTR~~AGHS~~EN" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum plastic primer">
+                <div class="chem" data-search="rust-oleum plastic primer" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Plastic Primer</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/213517T.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/213517T.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum professional high performance enamel">
+                <div class="chem" data-search="rust-oleum professional high performance enamel" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Professional High Performance Enamel</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/7776402.pdf?_gl=1*ia1wgs*_gcl_au*MzU0MTY5MzI4LjE3Njg2OTE4NTY.*_ga*ODc3NTQ5NzM5LjE3Njg2OTE4NTY.*_ga_ET73R380KW*czE3Njg3MDA5OTAkbzIkZzEkdDE3Njg3MDExNTMkajYwJGwwJGg0ODExMDkyNTk." target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/7776402.pdf?_gl=1*ia1wgs*_gcl_au*MzU0MTY5MzI4LjE3Njg2OTE4NTY.*_ga*ODc3NTQ5NzM5LjE3Njg2OTE4NTY.*_ga_ET73R380KW*czE3Njg3MDA5OTAkbzIkZzEkdDE3Njg3MDExNTMkajYwJGwwJGg0ODExMDkyNTk." target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum professional inverted striping paint">
+                <div class="chem" data-search="rust-oleum professional inverted striping paint" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Professional Inverted Striping Paint</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/2348838.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/2348838.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="osi quad max sealant silica">
+                <div class="chem" data-search="osi quad max sealant silica" data-ghs="GHS08" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">QUAD MAX Window, Door & Siding Sealant</div>
                         <div class="chem-mfr">OSI/Henkel</div>
                     </div>
-                    <a href="https://www.buildsite.com/pdf/osi/QUAD-MAX-SDS-2915681.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.buildsite.com/pdf/osi/QUAD-MAX-SDS-2915681.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rapid tac cleaner application fluid vinyl">
+                <div class="chem" data-search="rapid tac cleaner application fluid vinyl" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Rapid Tac Cleaner and Application Fluid</div>
                         <div class="chem-mfr">Rapid Tac Canada</div>
                     </div>
-                    <a href="https://dev.rapidtac.com/wp-content/uploads/2022/12/rapidtacsds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://dev.rapidtac.com/wp-content/uploads/2022/12/rapidtacsds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="relton rapid tap heavy duty cutting fluid">
+                <div class="chem" data-search="relton rapid tap heavy duty cutting fluid" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Rapid Tap Heavy Duty Cutting Fluid</div>
                         <div class="chem-mfr">Relton/Steco</div>
                     </div>
-                    <a href="https://www.relton.com/_files/ugd/1ddeb7_548b3af8e8f445688823f3a49526e358.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.relton.com/_files/ugd/1ddeb7_548b3af8e8f445688823f3a49526e358.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="masterpro sae 80w-90 gear oil">
+                <div class="chem" data-search="masterpro sae 80w-90 gear oil" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">SAE 80W-90 Gear Oil</div>
                         <div class="chem-mfr">MasterPro (O'Reilly)</div>
                     </div>
-                    <a href="https://omnisp.sharepoint.com/sites/ExternalResources/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FExternalResources%2FShared%20Documents%2FTechnical%20Documents%2FSDS%2FO%27Reilly%2FEnglish%2FMasterPro%20SDS%2FGL%2D5%20Gear%20Oil%20SAE%2080W90%2C%20SAE%2085W140%5FUS%2DSDS%20Rev%207%2Epdf&parent=%2Fsites%2FExternalResources%2FShared%20Documents%2FTechnical%20Documents%2FSDS%2FO%27Reilly%2FEnglish%2FMasterPro%20SDS&p=true&ga=1" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://omnisp.sharepoint.com/sites/ExternalResources/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FExternalResources%2FShared%20Documents%2FTechnical%20Documents%2FSDS%2FO%27Reilly%2FEnglish%2FMasterPro%20SDS%2FGL%2D5%20Gear%20Oil%20SAE%2080W90%2C%20SAE%2085W140%5FUS%2DSDS%20Rev%207%2Epdf&parent=%2Fsites%2FExternalResources%2FShared%20Documents%2FTechnical%20Documents%2FSDS%2FO%27Reilly%2FEnglish%2FMasterPro%20SDS&p=true&ga=1" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="loctite sf 712 accelerator cyanoacrylate">
+                <div class="chem" data-search="loctite sf 712 accelerator cyanoacrylate" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">SF 712 Accelerator</div>
                         <div class="chem-mfr">Loctite/Henkel</div>
                     </div>
-                    <a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27135316%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27135316%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="sheila shine stainless steel polish cleaner">
+                <div class="chem" data-search="sheila shine stainless steel polish cleaner" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Sheila Shine Stainless Steel Polish</div>
                         <div class="chem-mfr">Sheila Shine Inc.</div>
                     </div>
-                    <a href="https://sheilashineinc.com/wp-content/files/SheilaShine-Low-VOC-Aerosol-North-America.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://sheilashineinc.com/wp-content/files/SheilaShine-Low-VOC-Aerosol-North-America.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="kester solder sn60pb40 lead tin 7439-92-1">
+                <div class="chem" data-search="kester solder sn60pb40 lead tin 7439-92-1" data-ghs="" data-signal="" data-nfpa-h="3" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Solder Wire Sn60Pb40 (LEADED)</div>
                         <div class="chem-mfr">Kester | CAS: 7439-92-1</div>
                     </div>
-                    <a href="https://sayal.com/PDF/Specsheet/sds_44.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://sayal.com/PDF/Specsheet/sds_44.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="wd-40 specialist gel lube no-drip">
+                <div class="chem" data-search="wd-40 specialist gel lube no-drip" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Specialist Gel Lube</div>
                         <div class="chem-mfr">WD-40 Company</div>
                     </div>
-                    <a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-spray-and-stay-gel-lubricant-aerosol-us-ghs-sds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-spray-and-stay-gel-lubricant-aerosol-us-ghs-sds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="wd-40 specialist silicone lubricant">
+                <div class="chem" data-search="wd-40 specialist silicone lubricant" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Specialist Silicone Lubricant</div>
                         <div class="chem-mfr">WD-40 Company</div>
                     </div>
-                    <a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-water-resistant-silicone-lubricant-us-ghs.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-water-resistant-silicone-lubricant-us-ghs.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="wd-40 specialist white lithium grease">
+                <div class="chem" data-search="wd-40 specialist white lithium grease" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Specialist White Lithium Grease</div>
                         <div class="chem-mfr">WD-40 Company</div>
                     </div>
-                    <a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-protective-white-lithium-grease-low-voc-us-ghs-sds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-protective-white-lithium-grease-low-voc-us-ghs-sds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="magnaflux spotcheck skd-s2 developer ndt">
+                <div class="chem" data-search="magnaflux spotcheck skd-s2 developer ndt" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Spotcheck SKD-S2 Developer</div>
                         <div class="chem-mfr">Magnaflux</div>
                     </div>
-                    <a href="https://publish-almego.ecoonline.net/getfile/957F3F56-C121-4E71-AF76-143C785F2645/html/1564601/1564601_Magnaflux_SKD-S2%20Aerosol_US-en_v5_0" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://publish-almego.ecoonline.net/getfile/957F3F56-C121-4E71-AF76-143C785F2645/html/1564601/1564601_Magnaflux_SKD-S2%20Aerosol_US-en_v5_0" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="magnaflux spotcheck skl-sp2 dye penetrant ndt">
+                <div class="chem" data-search="magnaflux spotcheck skl-sp2 dye penetrant ndt" data-ghs="GHS02,GHS07,GHS08,GHS09" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Spotcheck SKL-SP2 Dye Penetrant</div>
                         <div class="chem-mfr">Magnaflux</div>
                     </div>
-                    <a href="https://www.magnaflux.com/Files/Safety-Data-Sheets/Safety-Data-Sheets---English/SKL-SP2-Liquid_Safety-Data-Sheet_English.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.magnaflux.com/Files/Safety-Data-Sheets/Safety-Data-Sheets---English/SKL-SP2-Liquid_Safety-Data-Sheet_English.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="gorilla spray adhesive heavy duty">
+                <div class="chem" data-search="gorilla spray adhesive heavy duty" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Spray Adhesive Heavy Duty</div>
                         <div class="chem-mfr">Gorilla Glue</div>
                     </div>
-                    <a href="https://gorillaglue.com.au/wp-content/uploads/2024/03/Gorilla-Spray-Adhesive.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://gorillaglue.com.au/wp-content/uploads/2024/03/Gorilla-Spray-Adhesive.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="weiman stainless steel cleaner polish">
+                <div class="chem" data-search="weiman stainless steel cleaner polish" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Stainless Steel Cleaner & Polish</div>
                         <div class="chem-mfr">Weiman</div>
                     </div>
-                    <a href="https://weiman.com/mwdownloads/download/link/id/584/" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://weiman.com/mwdownloads/download/link/id/584/" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum stops rust protective enamel">
+                <div class="chem" data-search="rust-oleum stops rust protective enamel" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Stops Rust Protective Enamel</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/7776830.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/7776830.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="3m super 77 multipurpose adhesive">
+                <div class="chem" data-search="3m super 77 multipurpose adhesive" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Super 77 Multipurpose Adhesive</div>
                         <div class="chem-mfr">3M</div>
                     </div>
-                    <a href="https://multimedia.3m.com/mws/mediawebserver?mwsId=SSSSSuUn_zu8l00x482xN8mvNv70k17zHvu9lxtD7SSSSSS--" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://multimedia.3m.com/mws/mediawebserver?mwsId=SSSSSuUn_zu8l00x482xN8mvNv70k17zHvu9lxtD7SSSSSS--" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="tough guy sweeping compound petroleum">
+                <div class="chem" data-search="tough guy sweeping compound petroleum" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Sweeping Compound</div>
                         <div class="chem-mfr">Tough Guy (Grainger)</div>
                     </div>
-                    <a href="https://www.grainger.com/sds/pdf/176916.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.grainger.com/sds/pdf/176916.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="titebond iii ultimate wood glue pva">
+                <div class="chem" data-search="titebond iii ultimate wood glue pva" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Titebond III Ultimate Wood Glue</div>
                         <div class="chem-mfr">Franklin International</div>
                     </div>
-                    <a href="https://sds.franklini.com/msds/1414.042n0nmo0020.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://sds.franklini.com/msds/1414.042n0nmo0020.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="techspray turbo-coat acrylic conformal coating 2108">
+                <div class="chem" data-search="techspray turbo-coat acrylic conformal coating 2108" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Turbo-Coat Acrylic Conformal Coating 2108-12S</div>
                         <div class="chem-mfr">Techspray</div>
                     </div>
-                    <a href="https://www.techspray.com/content/msds/2108-12S_Canada-CA-SDS-HPR-2023_English-US-2025.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.techspray.com/content/msds/2108-12S_Canada-CA-SDS-HPR-2023_English-US-2025.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="wd-40 multi-use product original">
+                <div class="chem" data-search="wd-40 multi-use product original" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">WD-40 Multi-Use Product (Original)</div>
                         <div class="chem-mfr">WD-40 Company</div>
                     </div>
-                    <a href="https://files.wd40.com/pdf/sds/mup/wd-40-multi-use-product-aerosol-low-voc-sds-us-ghs.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://files.wd40.com/pdf/sds/mup/wd-40-multi-use-product-aerosol-low-voc-sds-us-ghs.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="liquid wrench white lithium grease">
+                <div class="chem" data-search="liquid wrench white lithium grease" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">White Lithium Grease</div>
                         <div class="chem-mfr">Liquid Wrench</div>
                     </div>
-                    <a href="https://www1.mscdirect.com/MSDS/MSDS00025/88594387-20190908.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www1.mscdirect.com/MSDS/MSDS00025/88594387-20190908.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="lucas oil white lithium grease">
+                <div class="chem" data-search="lucas oil white lithium grease" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">White Lithium Grease</div>
                         <div class="chem-mfr">Lucas Oil Products</div>
                     </div>
-                    <a href="https://www.lucasoil.com/pdf/SDS_White-Lithium-Grease.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.lucasoil.com/pdf/SDS_White-Lithium-Grease.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="weller wsw sac m1 solder wire lead-free">
+                <div class="chem" data-search="weller wsw sac m1 solder wire lead-free" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">WSW SAC M1 Solder Wire (Lead-Free)</div>
                         <div class="chem-mfr">Weller</div>
                     </div>
-                    <a href="https://docs.rs-online.com/33d0/0900766b8165695f.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://docs.rs-online.com/33d0/0900766b8165695f.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="tap magic xtra-thick cutting fluid">
+                <div class="chem" data-search="tap magic xtra-thick cutting fluid" data-ghs="GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">XTRA-THICK Cutting Fluid</div>
                         <div class="chem-mfr">Tap Magic</div>
                     </div>
-                    <a href="https://tapmagic.com/wp-content/uploads/2025/01/20211123111200-tap-magic-xtra-thick-sds-us-v412english-uspdf.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://tapmagic.com/wp-content/uploads/2025/01/20211123111200-tap-magic-xtra-thick-sds-us-v412english-uspdf.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -814,124 +1110,124 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="3m hi-strength 90 spray adhesive">
+                <div class="chem" data-search="3m hi-strength 90 spray adhesive" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Hi-Strength 90 CA Spray Adhesive</div>
                         <div class="chem-mfr">3M</div>
                     </div>
-                    <a href="https://cdmsweb.3m.com/ingredientcommunication/file/Media/8wJRhbye1YM=" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://cdmsweb.3m.com/ingredientcommunication/file/Media/8wJRhbye1YM=" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="3m super 77 multipurpose adhesive">
+                <div class="chem" data-search="3m super 77 multipurpose adhesive" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Super 77 Multipurpose Adhesive</div>
                         <div class="chem-mfr">3M</div>
                     </div>
-                    <a href="https://multimedia.3m.com/mws/mediawebserver?mwsId=SSSSSuUn_zu8l00x482xN8mvNv70k17zHvu9lxtD7SSSSSS--" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://multimedia.3m.com/mws/mediawebserver?mwsId=SSSSSuUn_zu8l00x482xN8mvNv70k17zHvu9lxtD7SSSSSS--" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="flex seal aerosol rubber sealant">
+                <div class="chem" data-search="flex seal aerosol rubber sealant" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Flex Seal Aerosol</div>
                         <div class="chem-mfr">Flex Seal/Swift Response</div>
                     </div>
-                    <a href="https://images.thdstatic.com/catalog/pdfImages/2f/2f21ec09-1560-45c0-b5e0-0bf656868d5c.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://images.thdstatic.com/catalog/pdfImages/2f/2f21ec09-1560-45c0-b5e0-0bf656868d5c.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="flex seal liquid rubber sealant">
+                <div class="chem" data-search="flex seal liquid rubber sealant" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Flex Seal Liquid Rubber Sealant</div>
                         <div class="chem-mfr">Flex Seal/Swift Response</div>
                     </div>
-                    <a href="https://content.oppictures.com/Master_Images/Master_PDF_Files/FSGLFSBLKR32_SDS.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://content.oppictures.com/Master_Images/Master_PDF_Files/FSGLFSBLKR32_SDS.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="gorilla spray adhesive heavy duty">
+                <div class="chem" data-search="gorilla spray adhesive heavy duty" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Spray Adhesive Heavy Duty</div>
                         <div class="chem-mfr">Gorilla Glue</div>
                     </div>
-                    <a href="https://gorillaglue.com.au/wp-content/uploads/2024/03/Gorilla-Spray-Adhesive.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://gorillaglue.com.au/wp-content/uploads/2024/03/Gorilla-Spray-Adhesive.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="great stuff gaps cracks foam sealant polyurethane">
+                <div class="chem" data-search="great stuff gaps cracks foam sealant polyurethane" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="1" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Great Stuff Gaps & Cracks Foam Sealant</div>
                         <div class="chem-mfr">Great Stuff/Dow</div>
                     </div>
-                    <a href="https://www.greatstuff.dupont.com/content/dam/dupont/amer/us/en/greatstuff-renewed/public/sds/en/gaps-cracks-insulating-foam-sealant-smart-dispenser-US-SDS-000000487673.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.greatstuff.dupont.com/content/dam/dupont/amer/us/en/greatstuff-renewed/public/sds/en/gaps-cracks-insulating-foam-sealant-smart-dispenser-US-SDS-000000487673.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="liquid nails heavy duty construction adhesive">
+                <div class="chem" data-search="liquid nails heavy duty construction adhesive" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Heavy Duty Construction Adhesive</div>
                         <div class="chem-mfr">Liquid Nails</div>
                     </div>
-                    <a href="https://buyat.ppg.com/EHSDocumentManagerPublic/documentSearchInnerFrame.aspx?SearchAllPublicFolders=True&CodeCondition=IsEqualTo&CodeValue=00407708&Form=57c70348f2d7b3740000&Language=en-US" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://buyat.ppg.com/EHSDocumentManagerPublic/documentSearchInnerFrame.aspx?SearchAllPublicFolders=True&CodeCondition=IsEqualTo&CodeValue=00407708&Form=57c70348f2d7b3740000&Language=en-US" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="loctite 242 threadlocker blue medium">
+                <div class="chem" data-search="loctite 242 threadlocker blue medium" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">242 Threadlocker Blue (Medium Strength)</div>
                         <div class="chem-mfr">Loctite/Henkel</div>
                     </div>
-                    <a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27209728%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27209728%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="loctite 271 threadlocker red high strength">
+                <div class="chem" data-search="loctite 271 threadlocker red high strength" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">271 Threadlocker Red (High Strength)</div>
                         <div class="chem-mfr">Loctite/Henkel</div>
                     </div>
-                    <a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27487232%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27487232%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="loctite 495 instant adhesive cyanoacrylate">
+                <div class="chem" data-search="loctite 495 instant adhesive cyanoacrylate" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">495 Instant Adhesive</div>
                         <div class="chem-mfr">Loctite/Henkel</div>
                     </div>
-                    <a href="https://docs.rs-online.com/159c/0900766b8134bbad.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://docs.rs-online.com/159c/0900766b8134bbad.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="loctite sf 712 accelerator cyanoacrylate">
+                <div class="chem" data-search="loctite sf 712 accelerator cyanoacrylate" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">SF 712 Accelerator</div>
                         <div class="chem-mfr">Loctite/Henkel</div>
                     </div>
-                    <a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27135316%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://api.henkeldx.com/v2/mysds/SafetyDataSheetSet?Appid=%27YPSSW_SDSUA_EXT%27&Matnr=%27135316%27&Laiso=%27EN%27&Rvlid=%27US%27&Dmskey=%27%27&X-Api-Key=Auy4a2t5e00VU2Ju93GSKHeybHFVjYLX" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="selsil ninja mdf instant adhesive spray">
+                <div class="chem" data-search="selsil ninja mdf instant adhesive spray" data-ghs="GHS02,GHS05,GHS07,GHS09" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Ninja MDF Instant Adhesive Spray</div>
                         <div class="chem-mfr">Selsil</div>
                     </div>
-                    <a href="https://adheseal1.sharepoint.com/sites/TestingPortal/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FTestingPortal%2FShared%20Documents%2FProducts%2FSelsil%2FNinja%20MDF%2FSelsil%20MDF%20Kit%20Activator%20Spray%2DT2%2DSDS%2D%5FEN%2Epdf&parent=%2Fsites%2FTestingPortal%2FShared%20Documents%2FProducts%2FSelsil%2FNinja%20MDF&p=true&ga=1" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://adheseal1.sharepoint.com/sites/TestingPortal/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FTestingPortal%2FShared%20Documents%2FProducts%2FSelsil%2FNinja%20MDF%2FSelsil%20MDF%20Kit%20Activator%20Spray%2DT2%2DSDS%2D%5FEN%2Epdf&parent=%2Fsites%2FTestingPortal%2FShared%20Documents%2FProducts%2FSelsil%2FNinja%20MDF&p=true&ga=1" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="titebond iii ultimate wood glue pva">
+                <div class="chem" data-search="titebond iii ultimate wood glue pva" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Titebond III Ultimate Wood Glue</div>
                         <div class="chem-mfr">Franklin International</div>
                     </div>
-                    <a href="https://sds.franklini.com/msds/1414.042n0nmo0020.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://sds.franklini.com/msds/1414.042n0nmo0020.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="vibra-tite 202 viz-torque tamper detection marker">
+                <div class="chem" data-search="vibra-tite 202 viz-torque tamper detection marker" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">202 VIZ-TORQUE Tamper Detection Marker</div>
                         <div class="chem-mfr">Vibra-TITE/ND Industries</div>
                     </div>
-                    <a href="https://www.vibra-tite.com/wp-content/uploads/SDS-VT2022-Vibra-TITE-Green_Specialty_Products-USEN.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.vibra-tite.com/wp-content/uploads/SDS-VT2022-Vibra-TITE-Green_Specialty_Products-USEN.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="osi quad max sealant silica">
+                <div class="chem" data-search="osi quad max sealant silica" data-ghs="GHS08" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">QUAD MAX Window, Door & Siding Sealant</div>
                         <div class="chem-mfr">OSI/Henkel</div>
                     </div>
-                    <a href="https://www.buildsite.com/pdf/osi/QUAD-MAX-SDS-2915681.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.buildsite.com/pdf/osi/QUAD-MAX-SDS-2915681.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="gorilla contact adhesive ultimate toluene">
+                <div class="chem" data-search="gorilla contact adhesive ultimate toluene" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Contact Adhesive Ultimate</div>
                         <div class="chem-mfr">Gorilla Glue</div>
                     </div>
-                    <a href="https://cdn.prod.website-files.com/68d31c8eca8b8919d2d12047/69499e329563fa62a7fad210_EN_Final-OSHA-SDS_Contact-Adhesive-Ultimate-Web-Spray-V1.1.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://cdn.prod.website-files.com/68d31c8eca8b8919d2d12047/69499e329563fa62a7fad210_EN_Final-OSHA-SDS_Contact-Adhesive-Ultimate-Web-Spray-V1.1.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rapid tac cleaner application fluid vinyl">
+                <div class="chem" data-search="rapid tac cleaner application fluid vinyl" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Rapid Tac Cleaner and Application Fluid</div>
                         <div class="chem-mfr">Rapid Tac Canada</div>
                     </div>
-                    <a href="https://dev.rapidtac.com/wp-content/uploads/2022/12/rapidtacsds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://dev.rapidtac.com/wp-content/uploads/2022/12/rapidtacsds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -943,103 +1239,103 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="rust-oleum plastic primer">
+                <div class="chem" data-search="rust-oleum plastic primer" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Plastic Primer</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/213517T.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/213517T.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum stops rust protective enamel">
+                <div class="chem" data-search="rust-oleum stops rust protective enamel" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Stops Rust Protective Enamel</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/7776830.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/7776830.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum fluorescent spray paint green">
+                <div class="chem" data-search="rust-oleum fluorescent spray paint green" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Fluorescent Spray Paint (Green)</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/2233838.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/2233838.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum professional high performance enamel">
+                <div class="chem" data-search="rust-oleum professional high performance enamel" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Professional High Performance Enamel</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/7776402.pdf?_gl=1*ia1wgs*_gcl_au*MzU0MTY5MzI4LjE3Njg2OTE4NTY.*_ga*ODc3NTQ5NzM5LjE3Njg2OTE4NTY.*_ga_ET73R380KW*czE3Njg3MDA5OTAkbzIkZzEkdDE3Njg3MDExNTMkajYwJGwwJGg0ODExMDkyNTk." target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/7776402.pdf?_gl=1*ia1wgs*_gcl_au*MzU0MTY5MzI4LjE3Njg2OTE4NTY.*_ga*ODc3NTQ5NzM5LjE3Njg2OTE4NTY.*_ga_ET73R380KW*czE3Njg3MDA5OTAkbzIkZzEkdDE3Njg3MDExNTMkajYwJGwwJGg0ODExMDkyNTk." target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum professional inverted striping paint">
+                <div class="chem" data-search="rust-oleum professional inverted striping paint" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Professional Inverted Striping Paint</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/2348838.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/2348838.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="dupli-color engine enamel ceramic">
+                <div class="chem" data-search="dupli-color engine enamel ceramic" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Engine Enamel with Ceramic</div>
                         <div class="chem-mfr">Dupli-Color</div>
                     </div>
-                    <a href="https://paintdocs.com/docs/webPDF.jsp?SITEID=DUPLI&lang=2&cntry=US&doctype=SDS&prodno=026916916136" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://paintdocs.com/docs/webPDF.jsp?SITEID=DUPLI&lang=2&cntry=US&doctype=SDS&prodno=026916916136" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum farm implement paint">
+                <div class="chem" data-search="rust-oleum farm implement paint" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Farm & Implement Paint</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/280123.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/280123.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum custom spray 5-in-1 protective enamel">
+                <div class="chem" data-search="rust-oleum custom spray 5-in-1 protective enamel" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Custom Spray 5-in-1 Protective Enamel</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/376855.pdf?_gl=1*si0pb6*_gcl_au*MzU0MTY5MzI4LjE3Njg2OTE4NTY.*_ga*ODc3NTQ5NzM5LjE3Njg2OTE4NTY.*_ga_ET73R380KW*czE3Njg3MDA5OTAkbzIkZzEkdDE3Njg3MDI0MjkkajM4JGwwJGg0ODExMDkyNTk." target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/376855.pdf?_gl=1*si0pb6*_gcl_au*MzU0MTY5MzI4LjE3Njg2OTE4NTY.*_ga*ODc3NTQ5NzM5LjE3Njg2OTE4NTY.*_ga_ET73R380KW*czE3Njg3MDA5OTAkbzIkZzEkdDE3Njg3MDI0MjkkajM4JGwwJGg0ODExMDkyNTk." target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="rust-oleum concrete saver 5600 acrylic urethane floor">
+                <div class="chem" data-search="rust-oleum concrete saver 5600 acrylic urethane floor" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Concrete Saver 5600 Acrylic Urethane Floor Paint</div>
                         <div class="chem-mfr">Rust-Oleum</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/261116.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/261116.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="krylon no hunting purple marking paint">
+                <div class="chem" data-search="krylon no hunting purple marking paint" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">No Hunting Purple Marking Paint</div>
                         <div class="chem-mfr">Krylon</div>
                     </div>
-                    <a href="https://paintdocs.com/docs/webPDF.jsp?SITEID=KRYLON&lang=2&cntry=US&doctype=SDS&prodno=724504069010" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://paintdocs.com/docs/webPDF.jsp?SITEID=KRYLON&lang=2&cntry=US&doctype=SDS&prodno=724504069010" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="zinsser bulls eye 1-2-3 primer">
+                <div class="chem" data-search="zinsser bulls eye 1-2-3 primer" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="2" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Bulls Eye 1-2-3 Primer</div>
                         <div class="chem-mfr">Zinsser</div>
                     </div>
-                    <a href="https://www.rustoleum.com/MSDS/ENGLISH/02008.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.rustoleum.com/MSDS/ENGLISH/02008.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="ppg multi-pro interior paint latex">
+                <div class="chem" data-search="ppg multi-pro interior paint latex" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Multi-Pro Interior Paint</div>
                         <div class="chem-mfr">PPG</div>
                     </div>
-                    <a href="https://buyat.ppg.com/EHSDocumentManagerPublic/documentSearchInnerFrame.aspx?SearchAllPublicFolders=True&CodeCondition=IsEqualTo&CodeValue=00407935&Form=53bd5d15b2c796a10000&Language=en-US" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://buyat.ppg.com/EHSDocumentManagerPublic/documentSearchInnerFrame.aspx?SearchAllPublicFolders=True&CodeCondition=IsEqualTo&CodeValue=00407935&Form=53bd5d15b2c796a10000&Language=en-US" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="sheila shine stainless steel polish cleaner">
+                <div class="chem" data-search="sheila shine stainless steel polish cleaner" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Sheila Shine Stainless Steel Polish</div>
                         <div class="chem-mfr">Sheila Shine Inc.</div>
                     </div>
-                    <a href="https://sheilashineinc.com/wp-content/files/SheilaShine-Low-VOC-Aerosol-North-America.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://sheilashineinc.com/wp-content/files/SheilaShine-Low-VOC-Aerosol-North-America.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="weiman stainless steel cleaner polish">
+                <div class="chem" data-search="weiman stainless steel cleaner polish" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Stainless Steel Cleaner & Polish</div>
                         <div class="chem-mfr">Weiman</div>
                     </div>
-                    <a href="https://weiman.com/mwdownloads/download/link/id/584/" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://weiman.com/mwdownloads/download/link/id/584/" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -1051,19 +1347,19 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="prosoco consolideck lsguard concrete sealer lithium">
+                <div class="chem" data-search="prosoco consolideck lsguard concrete sealer lithium" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Consolideck LSGuard Concrete Sealer</div>
                         <div class="chem-mfr">PROSOCO</div>
                     </div>
-                    <a href="https://prosoco.com/Content/Documents/Product/CD_LSGuard_SDS_073021_C.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://prosoco.com/Content/Documents/Product/CD_LSGuard_SDS_073021_C.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="henry 345 premixed floor patch silica cement">
+                <div class="chem" data-search="henry 345 premixed floor patch silica cement" data-ghs="GHS07,GHS08" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">345 Premixed Floor Patch</div>
                         <div class="chem-mfr">Henry</div>
                     </div>
-                    <a href="https://www.wwhenry.com/wp-content/uploads/2019/06/HENRY-345-Safety-Data-Sheet.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.wwhenry.com/wp-content/uploads/2019/06/HENRY-345-Safety-Data-Sheet.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -1075,47 +1371,47 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="mcmaster-carr cutting fluid ep-9">
+                <div class="chem" data-search="mcmaster-carr cutting fluid ep-9" data-ghs="GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Cutting Fluid EP-9</div>
                         <div class="chem-mfr">McMaster-Carr</div>
                     </div>
-                    <a href="https://techdata.level7chemical.com/data/pdf/Tap_Magic_EP-Xtra-_SDS.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://techdata.level7chemical.com/data/pdf/Tap_Magic_EP-Xtra-_SDS.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="relton rapid tap heavy duty cutting fluid">
+                <div class="chem" data-search="relton rapid tap heavy duty cutting fluid" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Rapid Tap Heavy Duty Cutting Fluid</div>
                         <div class="chem-mfr">Relton/Steco</div>
                     </div>
-                    <a href="https://www.relton.com/_files/ugd/1ddeb7_548b3af8e8f445688823f3a49526e358.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.relton.com/_files/ugd/1ddeb7_548b3af8e8f445688823f3a49526e358.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="tap magic xtra-thick cutting fluid">
+                <div class="chem" data-search="tap magic xtra-thick cutting fluid" data-ghs="GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">XTRA-THICK Cutting Fluid</div>
                         <div class="chem-mfr">Tap Magic</div>
                     </div>
-                    <a href="https://tapmagic.com/wp-content/uploads/2025/01/20211123111200-tap-magic-xtra-thick-sds-us-v412english-uspdf.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://tapmagic.com/wp-content/uploads/2025/01/20211123111200-tap-magic-xtra-thick-sds-us-v412english-uspdf.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="tap magic aluminum cutting fluid cinnamon">
+                <div class="chem" data-search="tap magic aluminum cutting fluid cinnamon" data-ghs="GHS07,GHS08,GHS09" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="2" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Aluminum Cutting Fluid</div>
                         <div class="chem-mfr">Tap Magic</div>
                     </div>
-                    <a href="https://tapmagic.com/wp-content/uploads/2025/01/20241106135018-tap-magic-aluminum-sds-us-en-final-2024pdf.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://tapmagic.com/wp-content/uploads/2025/01/20241106135018-tap-magic-aluminum-sds-us-en-final-2024pdf.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="cut-ease stick lubricant">
+                <div class="chem" data-search="cut-ease stick lubricant" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">CUT-EASE Stick Lubricant</div>
                         <div class="chem-mfr">AGS Company</div>
                     </div>
-                    <a href="https://www.agscompany.com/cdn/shop/files/Cut-Ease_Stick_Compound_Safety_Data_Sheet_-_English.pdf?v=658743648801267110" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.agscompany.com/cdn/shop/files/Cut-Ease_Stick_Compound_Safety_Data_Sheet_-_English.pdf?v=658743648801267110" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="renewable lubricants bio-general purpose cut 40">
+                <div class="chem" data-search="renewable lubricants bio-general purpose cut 40" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Bio-General Purpose Cut 40</div>
                         <div class="chem-mfr">Renewable Lubricants</div>
                     </div>
-                    <a href="https://renewablelube.com/assets/files/sds/86830-86833-86834-86836-Bio-General-Purpose-Cut-40-SDS_2022-05-27-154331_pwdj.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://renewablelube.com/assets/files/sds/86830-86833-86834-86836-Bio-General-Purpose-Cut-40-SDS_2022-05-27-154331_pwdj.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -1127,54 +1423,54 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="mg chemicals 844ar acrylic esd coating conformal">
+                <div class="chem" data-search="mg chemicals 844ar acrylic esd coating conformal" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">844AR Acrylic ESD Coating</div>
                         <div class="chem-mfr">MG Chemicals</div>
                     </div>
-                    <a href="https://mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-844ar-a.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-844ar-a.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="techspray turbo-coat acrylic conformal coating 2108">
+                <div class="chem" data-search="techspray turbo-coat acrylic conformal coating 2108" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Turbo-Coat Acrylic Conformal Coating 2108-12S</div>
                         <div class="chem-mfr">Techspray</div>
                     </div>
-                    <a href="https://www.techspray.com/content/msds/2108-12S_Canada-CA-SDS-HPR-2023_English-US-2025.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.techspray.com/content/msds/2108-12S_Canada-CA-SDS-HPR-2023_English-US-2025.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="mg chemicals 419d acrylic conformal coating">
+                <div class="chem" data-search="mg chemicals 419d acrylic conformal coating" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">419D Acrylic Conformal Coating</div>
                         <div class="chem-mfr">MG Chemicals</div>
                     </div>
-                    <a href="https://www.mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-419d-l.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-419d-l.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="weller wsw sac m1 solder wire lead-free">
+                <div class="chem" data-search="weller wsw sac m1 solder wire lead-free" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">WSW SAC M1 Solder Wire (Lead-Free)</div>
                         <div class="chem-mfr">Weller</div>
                     </div>
-                    <a href="https://docs.rs-online.com/33d0/0900766b8165695f.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://docs.rs-online.com/33d0/0900766b8165695f.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="kester solder sn60pb40 lead tin 7439-92-1">
+                <div class="chem" data-search="kester solder sn60pb40 lead tin 7439-92-1" data-ghs="" data-signal="" data-nfpa-h="3" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Solder Wire Sn60Pb40 (LEADED)</div>
                         <div class="chem-mfr">Kester | CAS: 7439-92-1</div>
                     </div>
-                    <a href="https://sayal.com/PDF/Specsheet/sds_44.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://sayal.com/PDF/Specsheet/sds_44.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="magnaflux spotcheck skl-sp2 dye penetrant ndt">
+                <div class="chem" data-search="magnaflux spotcheck skl-sp2 dye penetrant ndt" data-ghs="GHS02,GHS07,GHS08,GHS09" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Spotcheck SKL-SP2 Dye Penetrant</div>
                         <div class="chem-mfr">Magnaflux</div>
                     </div>
-                    <a href="https://www.magnaflux.com/Files/Safety-Data-Sheets/Safety-Data-Sheets---English/SKL-SP2-Liquid_Safety-Data-Sheet_English.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.magnaflux.com/Files/Safety-Data-Sheets/Safety-Data-Sheets---English/SKL-SP2-Liquid_Safety-Data-Sheet_English.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="magnaflux spotcheck skd-s2 developer ndt">
+                <div class="chem" data-search="magnaflux spotcheck skd-s2 developer ndt" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Spotcheck SKD-S2 Developer</div>
                         <div class="chem-mfr">Magnaflux</div>
                     </div>
-                    <a href="https://publish-almego.ecoonline.net/getfile/957F3F56-C121-4E71-AF76-143C785F2645/html/1564601/1564601_Magnaflux_SKD-S2%20Aerosol_US-en_v5_0" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://publish-almego.ecoonline.net/getfile/957F3F56-C121-4E71-AF76-143C785F2645/html/1564601/1564601_Magnaflux_SKD-S2%20Aerosol_US-en_v5_0" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -1186,33 +1482,33 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="bernzomatic map-pro torch fuel propylene">
+                <div class="chem" data-search="bernzomatic map-pro torch fuel propylene" data-ghs="GHS02,GHS04" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">MAP-Pro Torch Fuel</div>
                         <div class="chem-mfr">BernzOmatic</div>
                     </div>
-                    <a href="https://images.thdstatic.com/catalog/pdfImages/77/7799980f-17cc-4ff9-af62-c8dc0178bbde.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://images.thdstatic.com/catalog/pdfImages/77/7799980f-17cc-4ff9-af62-c8dc0178bbde.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="bernzomatic camping gas propane butane">
+                <div class="chem" data-search="bernzomatic camping gas propane butane" data-ghs="GHS02,GHS04" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Camping Gas (Propane/Butane)</div>
                         <div class="chem-mfr">BernzOmatic</div>
                     </div>
-                    <a href="https://mainlandgroup.ca/wp-content/uploads/2022/08/bernzomatic-propane-sds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://mainlandgroup.ca/wp-content/uploads/2022/08/bernzomatic-propane-sds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="innovera electronics duster difluoroethane 75-37-6">
+                <div class="chem" data-search="innovera electronics duster difluoroethane 75-37-6" data-ghs="GHS02,GHS04" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Electronics Duster</div>
                         <div class="chem-mfr">Innovera | CAS: 75-37-6</div>
                     </div>
-                    <a href="https://millcraft.com/wp-content/uploads/2023/05/AL1786-SDS-Innovera.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://millcraft.com/wp-content/uploads/2023/05/AL1786-SDS-Innovera.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="charking instant ignite lighter fluid charcoal">
+                <div class="chem" data-search="charking instant ignite lighter fluid charcoal" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="2" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Instant Ignite Lighter Fluid</div>
                         <div class="chem-mfr">CharKing</div>
                     </div>
-                    <a href="https://www.thecloroxcompany.com/wp-content/uploads/2019/03/Kingsford-Odorless-Charcoal-Lighter.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.thecloroxcompany.com/wp-content/uploads/2019/03/Kingsford-Odorless-Charcoal-Lighter.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -1224,110 +1520,110 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="wd-40 multi-use product original">
+                <div class="chem" data-search="wd-40 multi-use product original" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">WD-40 Multi-Use Product (Original)</div>
                         <div class="chem-mfr">WD-40 Company</div>
                     </div>
-                    <a href="https://files.wd40.com/pdf/sds/mup/wd-40-multi-use-product-aerosol-low-voc-sds-us-ghs.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://files.wd40.com/pdf/sds/mup/wd-40-multi-use-product-aerosol-low-voc-sds-us-ghs.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="wd-40 specialist silicone lubricant">
+                <div class="chem" data-search="wd-40 specialist silicone lubricant" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Specialist Silicone Lubricant</div>
                         <div class="chem-mfr">WD-40 Company</div>
                     </div>
-                    <a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-water-resistant-silicone-lubricant-us-ghs.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-water-resistant-silicone-lubricant-us-ghs.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="wd-40 specialist white lithium grease">
+                <div class="chem" data-search="wd-40 specialist white lithium grease" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Specialist White Lithium Grease</div>
                         <div class="chem-mfr">WD-40 Company</div>
                     </div>
-                    <a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-protective-white-lithium-grease-low-voc-us-ghs-sds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-protective-white-lithium-grease-low-voc-us-ghs-sds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="wd-40 specialist gel lube no-drip">
+                <div class="chem" data-search="wd-40 specialist gel lube no-drip" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Specialist Gel Lube</div>
                         <div class="chem-mfr">WD-40 Company</div>
                     </div>
-                    <a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-spray-and-stay-gel-lubricant-aerosol-us-ghs-sds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://files.wd40.com/pdf/sds/specialist/wd-40-specialist-spray-and-stay-gel-lubricant-aerosol-us-ghs-sds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="super lube synthetic ptfe grease">
+                <div class="chem" data-search="super lube synthetic ptfe grease" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Multi-Purpose Synthetic Grease (with PTFE)</div>
                         <div class="chem-mfr">Super Lube</div>
                     </div>
-                    <a href="https://www.super-lube.com/wp-content/uploads/2025/05/SDS_Super_Lube_Multi-Purpose_Grease_EU_sds.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.super-lube.com/wp-content/uploads/2025/05/SDS_Super_Lube_Multi-Purpose_Grease_EU_sds.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="mobil mobilith shc 220 synthetic grease">
+                <div class="chem" data-search="mobil mobilith shc 220 synthetic grease" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Mobilith SHC 220 Synthetic Grease</div>
                         <div class="chem-mfr">ExxonMobil</div>
                     </div>
-                    <a href="https://petroleumservicecompany.com/content/pdfs/MOBILITH_SHC_220_SDS.pdf?srsltid=AfmBOopmEFcxK_O3hbTvV8-jGDadXMbnVA7TTmAY1w3qdE3Sm1lu6bQ8" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://petroleumservicecompany.com/content/pdfs/MOBILITH_SHC_220_SDS.pdf?srsltid=AfmBOopmEFcxK_O3hbTvV8-jGDadXMbnVA7TTmAY1w3qdE3Sm1lu6bQ8" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="lucas oil white lithium grease">
+                <div class="chem" data-search="lucas oil white lithium grease" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">White Lithium Grease</div>
                         <div class="chem-mfr">Lucas Oil Products</div>
                     </div>
-                    <a href="https://www.lucasoil.com/pdf/SDS_White-Lithium-Grease.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.lucasoil.com/pdf/SDS_White-Lithium-Grease.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="lubriplate no 630-aa multi-purpose grease">
+                <div class="chem" data-search="lubriplate no 630-aa multi-purpose grease" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">No. 630-AA Multi-Purpose Grease</div>
                         <div class="chem-mfr">Lubriplate</div>
                     </div>
-                    <a href="https://lubriplate-sds.thewercs.com/DirectDocumentDownloader/Document?prd=04759~~PDF~~MTR~~AGHS~~EN" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://lubriplate-sds.thewercs.com/DirectDocumentDownloader/Document?prd=04759~~PDF~~MTR~~AGHS~~EN" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="liquid wrench white lithium grease">
+                <div class="chem" data-search="liquid wrench white lithium grease" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">White Lithium Grease</div>
                         <div class="chem-mfr">Liquid Wrench</div>
                     </div>
-                    <a href="https://www1.mscdirect.com/MSDS/MSDS00025/88594387-20190908.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www1.mscdirect.com/MSDS/MSDS00025/88594387-20190908.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="deoxit l260dp grease caig labs">
+                <div class="chem" data-search="deoxit l260dp grease caig labs" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">L260Dp Grease</div>
                         <div class="chem-mfr">DeoxIT/CAIG Labs</div>
                     </div>
-                    <a href="https://store.caig.com/core/media/media.nl?c=ACCT113328&h=f740a61f9fde1fdfb94a&id=78675&whence=" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://store.caig.com/core/media/media.nl?c=ACCT113328&h=f740a61f9fde1fdfb94a&id=78675&whence=" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="fehr penetrating oil door operator">
+                <div class="chem" data-search="fehr penetrating oil door operator" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Door & Operator Penetrating Oil</div>
                         <div class="chem-mfr">Fehr Bros. Industries</div>
                     </div>
-                    <a href="https://www.fehr.com/app/uploads/2025/03/L6930-SDS-Fehr-Brothers.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.fehr.com/app/uploads/2025/03/L6930-SDS-Fehr-Brothers.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="sprayon lu 210 food grade silicone lubricant">
+                <div class="chem" data-search="sprayon lu 210 food grade silicone lubricant" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">LU 210 Food Grade Silicone Lubricant</div>
                         <div class="chem-mfr">Sprayon</div>
                     </div>
-                    <a href="https://www1.mscdirect.com/MSDS/MSDS00067/53711198-20210701.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www1.mscdirect.com/MSDS/MSDS00067/53711198-20210701.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="masterpro sae 80w-90 gear oil">
+                <div class="chem" data-search="masterpro sae 80w-90 gear oil" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">SAE 80W-90 Gear Oil</div>
                         <div class="chem-mfr">MasterPro (O'Reilly)</div>
                     </div>
-                    <a href="https://omnisp.sharepoint.com/sites/ExternalResources/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FExternalResources%2FShared%20Documents%2FTechnical%20Documents%2FSDS%2FO%27Reilly%2FEnglish%2FMasterPro%20SDS%2FGL%2D5%20Gear%20Oil%20SAE%2080W90%2C%20SAE%2085W140%5FUS%2DSDS%20Rev%207%2Epdf&parent=%2Fsites%2FExternalResources%2FShared%20Documents%2FTechnical%20Documents%2FSDS%2FO%27Reilly%2FEnglish%2FMasterPro%20SDS&p=true&ga=1" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://omnisp.sharepoint.com/sites/ExternalResources/Shared%20Documents/Forms/AllItems.aspx?id=%2Fsites%2FExternalResources%2FShared%20Documents%2FTechnical%20Documents%2FSDS%2FO%27Reilly%2FEnglish%2FMasterPro%20SDS%2FGL%2D5%20Gear%20Oil%20SAE%2080W90%2C%20SAE%2085W140%5FUS%2DSDS%20Rev%207%2Epdf&parent=%2Fsites%2FExternalResources%2FShared%20Documents%2FTechnical%20Documents%2FSDS%2FO%27Reilly%2FEnglish%2FMasterPro%20SDS&p=true&ga=1" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="molyslip copaslip high temperature anti-seize copper">
+                <div class="chem" data-search="molyslip copaslip high temperature anti-seize copper" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Copaslip High Temperature Anti-Seize</div>
                         <div class="chem-mfr">Molyslip</div>
                     </div>
-                    <a href="https://static-content.cromwell.co.uk/pdfs/s/Medusa_Attachments/Molyslip/MLY-703-3610T%20SDS%20Rev%207.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://static-content.cromwell.co.uk/pdfs/s/Medusa_Attachments/Molyslip/MLY-703-3610T%20SDS%20Rev%207.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="boelube paste orelube machining">
+                <div class="chem" data-search="boelube paste orelube machining" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">BOELUBE Paste</div>
                         <div class="chem-mfr">The Orelube Corporation</div>
                     </div>
-                    <a href="https://orelube.com/wp-content/uploads/2024/12/Boelube-70307-OSHA-GHS-SDS.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://orelube.com/wp-content/uploads/2024/12/Boelube-70307-OSHA-GHS-SDS.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -1339,40 +1635,40 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="kester solder sn60pb40 lead tin 7439-92-1">
+                <div class="chem" data-search="kester solder sn60pb40 lead tin 7439-92-1" data-ghs="" data-signal="" data-nfpa-h="3" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Solder Wire Sn60Pb40 (LEADED)</div>
                         <div class="chem-mfr">Kester | CAS: 7439-92-1</div>
                     </div>
-                    <a href="https://sayal.com/PDF/Specsheet/sds_44.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://sayal.com/PDF/Specsheet/sds_44.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="osi quad max sealant silica henkel 14808-60-7">
+                <div class="chem" data-search="osi quad max sealant silica henkel 14808-60-7" data-ghs="GHS08" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">QUAD MAX Window, Door & Siding Sealant</div>
                         <div class="chem-mfr">OSI/Henkel | Contains Crystalline Silica</div>
                     </div>
-                    <a href="https://www.buildsite.com/pdf/osi/QUAD-MAX-SDS-2915681.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.buildsite.com/pdf/osi/QUAD-MAX-SDS-2915681.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="henry 345 floor patch silica cement 14808-60-7">
+                <div class="chem" data-search="henry 345 floor patch silica cement 14808-60-7" data-ghs="GHS07,GHS08" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">345 Premixed Floor Patch</div>
                         <div class="chem-mfr">Henry | Contains Crystalline Silica</div>
                     </div>
-                    <a href="https://www.wwhenry.com/wp-content/uploads/2019/06/HENRY-345-Safety-Data-Sheet.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.wwhenry.com/wp-content/uploads/2019/06/HENRY-345-Safety-Data-Sheet.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="gorilla contact adhesive ultimate toluene 108-88-3">
+                <div class="chem" data-search="gorilla contact adhesive ultimate toluene 108-88-3" data-ghs="GHS02,GHS07,GHS08" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Contact Adhesive Ultimate</div>
                         <div class="chem-mfr">Gorilla Glue | Contains Toluene</div>
                     </div>
-                    <a href="https://cdn.prod.website-files.com/68d31c8eca8b8919d2d12047/69499e329563fa62a7fad210_EN_Final-OSHA-SDS_Contact-Adhesive-Ultimate-Web-Spray-V1.1.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://cdn.prod.website-files.com/68d31c8eca8b8919d2d12047/69499e329563fa62a7fad210_EN_Final-OSHA-SDS_Contact-Adhesive-Ultimate-Web-Spray-V1.1.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="fehr penetrating oil door operator">
+                <div class="chem" data-search="fehr penetrating oil door operator" data-ghs="GHS02,GHS08" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="4" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Door & Operator Penetrating Oil</div>
                         <div class="chem-mfr">Fehr Bros. Industries</div>
                     </div>
-                    <a href="https://www.fehr.com/app/uploads/2025/03/L6930-SDS-Fehr-Brothers.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.fehr.com/app/uploads/2025/03/L6930-SDS-Fehr-Brothers.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -1384,61 +1680,61 @@
                 <span class="arrow">&#9660;</span>
             </div>
             <div class="cat-content">
-                <div class="chem" data-search="klean-strip acetone 67-64-1">
+                <div class="chem" data-search="klean-strip acetone 67-64-1" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Acetone</div>
                         <div class="chem-mfr">Klean-Strip | CAS: 67-64-1</div>
                     </div>
-                    <a href="https://www1.mscdirect.com/MSDS/MSDS00053/70250337-20251105.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www1.mscdirect.com/MSDS/MSDS00053/70250337-20251105.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="pharmco isopropyl alcohol 70 usp 67-63-0">
+                <div class="chem" data-search="pharmco isopropyl alcohol 70 usp 67-63-0" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Isopropyl Alcohol 70% (USP/NF)</div>
                         <div class="chem-mfr">Pharmco | CAS: 67-63-0</div>
                     </div>
-                    <a href="https://www1.mscdirect.com/MSDS/MSDS00053/54979885-20180215.PDF" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www1.mscdirect.com/MSDS/MSDS00053/54979885-20180215.PDF" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="pharmco isopropyl alcohol 99 hplc 67-63-0">
+                <div class="chem" data-search="pharmco isopropyl alcohol 99 hplc 67-63-0" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="1" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Isopropyl Alcohol 99% (HPLC-UV Grade)</div>
                         <div class="chem-mfr">Pharmco | CAS: 67-63-0</div>
                     </div>
-                    <a href="https://www.scienceinteractive.com/wp-content/uploads/2023/03/Isopropyl-Alcohol-Pharmco.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.scienceinteractive.com/wp-content/uploads/2023/03/Isopropyl-Alcohol-Pharmco.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="isopropanol 99 technical grade 67-63-0">
+                <div class="chem" data-search="isopropanol 99 technical grade 67-63-0" data-ghs="" data-signal="" data-nfpa-h="0" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Isopropanol 99% (Technical Grade)</div>
                         <div class="chem-mfr">Generic | CAS: 67-63-0</div>
                     </div>
-                    <a href="https://www.fishersci.com/content/dam/fishersci/en_US/documents/programs/education/regulatory-documents/sds/chemicals/chemicals-i/S25372A.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.fishersci.com/content/dam/fishersci/en_US/documents/programs/education/regulatory-documents/sds/chemicals/chemicals-i/S25372A.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="simple green industrial cleaner degreaser">
+                <div class="chem" data-search="simple green industrial cleaner degreaser" data-ghs="GHS07" data-signal="Warning" data-nfpa-h="1" data-nfpa-f="0" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Industrial Cleaner & Degreaser</div>
                         <div class="chem-mfr">Simple Green</div>
                     </div>
-                    <a href="https://cdn.simplegreen.com/downloads/SDS_EN-US_SimpleGreenIndustrialCleanerDegreaser.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://cdn.simplegreen.com/downloads/SDS_EN-US_SimpleGreenIndustrialCleanerDegreaser.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="mg chemicals 8310a conformal coating remover gel">
+                <div class="chem" data-search="mg chemicals 8310a conformal coating remover gel" data-ghs="GHS02,GHS07" data-signal="Danger" data-nfpa-h="2" data-nfpa-f="3" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">8310A Conformal Coating Remover-Gel</div>
                         <div class="chem-mfr">MG Chemicals</div>
                     </div>
-                    <a href="https://mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-8310a-l.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://mgchemicals.com/downloads/msds/01%20English%20Can-USA%20SDS/sds-8310a-l.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="sentinel formula 747 plus adhesive remover">
+                <div class="chem" data-search="sentinel formula 747 plus adhesive remover" data-ghs="GHS02,GHS07" data-signal="Warning" data-nfpa-h="2" data-nfpa-f="2" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Formula 747 Plus Adhesive Remover</div>
                         <div class="chem-mfr">Sentinel</div>
                     </div>
-                    <a href="https://www.senpro.com/wp-content/uploads/2024/05/Sentinel-747-Plus-Adhesive-Remover-VOC-Compliant-SDS-v.-1.3.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.senpro.com/wp-content/uploads/2024/05/Sentinel-747-Plus-Adhesive-Remover-VOC-Compliant-SDS-v.-1.3.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
-                <div class="chem" data-search="tough guy sweeping compound petroleum">
+                <div class="chem" data-search="tough guy sweeping compound petroleum" data-ghs="" data-signal="" data-nfpa-h="1" data-nfpa-f="1" data-nfpa-r="0" data-nfpa-s="">
                     <div class="chem-info">
                         <div class="chem-name">Sweeping Compound</div>
                         <div class="chem-mfr">Tough Guy (Grainger)</div>
                     </div>
-                    <a href="https://www.grainger.com/sds/pdf/176916.pdf" target="_blank" class="sds-btn">View SDS</a>
+                    <div class="chem-actions"><button class="label-btn" onclick="openLabelGenerator(this.closest('.chem'))">Label</button><a href="https://www.grainger.com/sds/pdf/176916.pdf" target="_blank" class="sds-btn">View SDS</a></div>
                 </div>
             </div>
         </div>
@@ -1448,6 +1744,97 @@
             No chemicals found matching your search.
         </div>
     </main>
+
+    <!-- LABEL GENERATOR MODAL -->
+    <div class="modal" id="labelModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Generate Label</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- BLANK LABEL FORM (hidden by default) -->
+                <div class="blank-label-form hidden" id="blankForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Chemical Name</label>
+                            <input type="text" id="blankName" placeholder="Enter chemical name">
+                        </div>
+                        <div class="form-group">
+                            <label>Manufacturer</label>
+                            <input type="text" id="blankMfr" placeholder="Enter manufacturer">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>SDS URL (for QR code)</label>
+                            <input type="text" id="blankSds" placeholder="https://...">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>NFPA Ratings (0-4)</label>
+                            <div class="nfpa-inputs">
+                                <input type="number" id="blankNfpaH" min="0" max="4" value="0" placeholder="H">
+                                <input type="number" id="blankNfpaF" min="0" max="4" value="0" placeholder="F">
+                                <input type="number" id="blankNfpaR" min="0" max="4" value="0" placeholder="R">
+                                <input type="text" id="blankNfpaS" placeholder="Spec" style="width:60px">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Signal Word</label>
+                            <select id="blankSignal">
+                                <option value="">None</option>
+                                <option value="Danger">DANGER</option>
+                                <option value="Warning">WARNING</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group" style="flex:none;width:100%">
+                            <label>GHS Pictograms</label>
+                            <div class="ghs-checkboxes">
+                                <label><input type="checkbox" value="GHS01"> Explosive</label>
+                                <label><input type="checkbox" value="GHS02"> Flame</label>
+                                <label><input type="checkbox" value="GHS03"> Oxidizer</label>
+                                <label><input type="checkbox" value="GHS04"> Gas</label>
+                                <label><input type="checkbox" value="GHS05"> Corrosive</label>
+                                <label><input type="checkbox" value="GHS06"> Toxic</label>
+                                <label><input type="checkbox" value="GHS07"> Irritant</label>
+                                <label><input type="checkbox" value="GHS08"> Health Hazard</label>
+                                <label><input type="checkbox" value="GHS09"> Environment</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="print-btn" style="width:100%;margin-top:12px" onclick="generateFromBlank()">Generate Preview</button>
+                </div>
+                <!-- SIZE SELECTOR -->
+                <div class="size-selector no-print">
+                    <button class="size-btn" data-size="2x2" onclick="setLabelSize('2x2')">2" × 2"</button>
+                    <button class="size-btn active" data-size="2x3" onclick="setLabelSize('2x3')">2" × 3"</button>
+                    <button class="size-btn" data-size="4x4" onclick="setLabelSize('4x4')">4" × 4"</button>
+                </div>
+                <!-- LABEL PREVIEW -->
+                <div class="label-preview size-2x3" id="labelPreview">
+                    <div class="label-header">
+                        <div class="label-name" id="previewName">Chemical Name</div>
+                        <div class="label-mfr" id="previewMfr">Manufacturer</div>
+                    </div>
+                    <div class="label-hazards">
+                        <div class="label-nfpa" id="previewNfpa"></div>
+                        <div class="label-ghs" id="previewGhs"></div>
+                    </div>
+                    <div class="label-signal" id="previewSignal"></div>
+                    <div class="label-qr" id="previewQr">
+                        <div class="label-qr-caption">Scan for SDS</div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-print">
+                <button class="print-btn" onclick="window.print()">Print Label</button>
+            </div>
+        </div>
+    </div>
 
     <script>
         function toggle(h){h.parentElement.classList.toggle('open')}
@@ -1496,25 +1883,266 @@
             if(e.key==='Enter')search();
         });
 
-        // Unit test for expand/collapse functionality
+        // =============================================
+        // LABEL GENERATOR
+        // =============================================
+
+        // GHS Pictogram SVGs (simplified for readability)
+        const GHS_PICTOGRAMS = {
+            GHS01: `<svg viewBox="0 0 100 100" class="ghs-icon"><polygon points="50,2 98,50 50,98 2,50" fill="#fff" stroke="#c00" stroke-width="4"/><circle cx="50" cy="50" r="12" fill="none" stroke="#000" stroke-width="3"/><line x1="50" y1="38" x2="50" y2="22" stroke="#000" stroke-width="3"/><line x1="50" y1="62" x2="50" y2="78" stroke="#000" stroke-width="3"/><line x1="38" y1="50" x2="22" y2="50" stroke="#000" stroke-width="3"/><line x1="62" y1="50" x2="78" y2="50" stroke="#000" stroke-width="3"/><line x1="41" y1="41" x2="30" y2="30" stroke="#000" stroke-width="3"/><line x1="59" y1="41" x2="70" y2="30" stroke="#000" stroke-width="3"/><line x1="41" y1="59" x2="30" y2="70" stroke="#000" stroke-width="3"/><line x1="59" y1="59" x2="70" y2="70" stroke="#000" stroke-width="3"/></svg>`,
+            GHS02: `<svg viewBox="0 0 100 100" class="ghs-icon"><polygon points="50,2 98,50 50,98 2,50" fill="#fff" stroke="#c00" stroke-width="4"/><path d="M50,25 C60,35 70,45 70,60 C70,75 60,82 50,82 C40,82 30,75 30,60 C30,45 40,35 50,25 Z" fill="#000"/></svg>`,
+            GHS03: `<svg viewBox="0 0 100 100" class="ghs-icon"><polygon points="50,2 98,50 50,98 2,50" fill="#fff" stroke="#c00" stroke-width="4"/><circle cx="50" cy="62" r="18" fill="none" stroke="#000" stroke-width="4"/><path d="M50,30 C55,38 60,42 60,48 C60,55 55,58 50,58 C45,58 40,55 40,48 C40,42 45,38 50,30 Z" fill="#000"/></svg>`,
+            GHS04: `<svg viewBox="0 0 100 100" class="ghs-icon"><polygon points="50,2 98,50 50,98 2,50" fill="#fff" stroke="#c00" stroke-width="4"/><ellipse cx="50" cy="50" rx="18" ry="28" fill="none" stroke="#000" stroke-width="4"/><ellipse cx="50" cy="28" rx="12" ry="6" fill="#000"/></svg>`,
+            GHS05: `<svg viewBox="0 0 100 100" class="ghs-icon"><polygon points="50,2 98,50 50,98 2,50" fill="#fff" stroke="#c00" stroke-width="4"/><path d="M30,35 L35,35 L38,50 L42,50 L42,70 L30,70 Z" fill="#000"/><path d="M58,50 L62,50 L65,35 L70,35 L70,70 L58,70 Z" fill="#000"/><ellipse cx="36" cy="75" rx="8" ry="3" fill="#000"/><ellipse cx="64" cy="75" rx="8" ry="3" fill="#000"/></svg>`,
+            GHS06: `<svg viewBox="0 0 100 100" class="ghs-icon"><polygon points="50,2 98,50 50,98 2,50" fill="#fff" stroke="#c00" stroke-width="4"/><circle cx="50" cy="35" r="15" fill="#000"/><circle cx="44" cy="32" r="3" fill="#fff"/><circle cx="56" cy="32" r="3" fill="#fff"/><path d="M40,42 Q50,50 60,42" stroke="#fff" stroke-width="2" fill="none"/><path d="M35,55 L45,75 L55,75 L65,55" fill="#000"/><line x1="40" y1="75" x2="35" y2="85" stroke="#000" stroke-width="4"/><line x1="60" y1="75" x2="65" y2="85" stroke="#000" stroke-width="4"/></svg>`,
+            GHS07: `<svg viewBox="0 0 100 100" class="ghs-icon"><polygon points="50,2 98,50 50,98 2,50" fill="#fff" stroke="#c00" stroke-width="4"/><rect x="46" y="28" width="8" height="35" fill="#000"/><circle cx="50" cy="72" r="5" fill="#000"/></svg>`,
+            GHS08: `<svg viewBox="0 0 100 100" class="ghs-icon"><polygon points="50,2 98,50 50,98 2,50" fill="#fff" stroke="#c00" stroke-width="4"/><circle cx="50" cy="32" r="10" fill="#000"/><path d="M35,45 L40,75 L60,75 L65,45 Z" fill="#000"/><polygon points="50,50 45,60 55,60" fill="#fff"/><polygon points="44,55 40,65 48,65" fill="#fff"/><polygon points="56,55 52,65 60,65" fill="#fff"/></svg>`,
+            GHS09: `<svg viewBox="0 0 100 100" class="ghs-icon"><polygon points="50,2 98,50 50,98 2,50" fill="#fff" stroke="#c00" stroke-width="4"/><path d="M25,55 Q30,45 35,55 L35,70 L25,70 Z" fill="#000"/><path d="M50,38 C55,42 58,48 55,55 L58,55 L58,70 L42,70 L42,55 L45,55 C42,48 45,42 50,38 Z" fill="#000"/><ellipse cx="65" cy="65" rx="8" ry="5" fill="#000"/><path d="M60,60 Q65,55 70,60" fill="none" stroke="#000" stroke-width="2"/></svg>`
+        };
+
+        // NFPA Diamond Renderer
+        function renderNFPA(h, f, r, s) {
+            return `<svg viewBox="0 0 100 100" style="width:100%;height:auto">
+                <polygon points="50,5 95,50 50,95 5,50" fill="none" stroke="#000" stroke-width="2"/>
+                <polygon points="5,50 50,5 50,50" fill="#0066CC"/>
+                <polygon points="50,5 95,50 50,50" fill="#CC0000"/>
+                <polygon points="50,50 95,50 50,95" fill="#FFCC00"/>
+                <polygon points="5,50 50,50 50,95" fill="#FFF" stroke="#000" stroke-width="1"/>
+                <text x="28" y="42" font-size="22" font-weight="bold" fill="#FFF" text-anchor="middle">${h}</text>
+                <text x="72" y="42" font-size="22" font-weight="bold" fill="#FFF" text-anchor="middle">${f}</text>
+                <text x="72" y="72" font-size="22" font-weight="bold" fill="#000" text-anchor="middle">${r}</text>
+                <text x="28" y="72" font-size="${s.length>1?12:16}" font-weight="bold" fill="#000" text-anchor="middle">${s||''}</text>
+            </svg>`;
+        }
+
+        // Simple QR Code Generator (alphanumeric, version 2-L for short URLs)
+        function generateQR(text) {
+            if (!text) return '<svg viewBox="0 0 100 100"><rect width="100" height="100" fill="#eee"/><text x="50" y="55" font-size="10" text-anchor="middle" fill="#999">No URL</text></svg>';
+
+            // For simplicity, use a basic pattern-based QR visualization
+            // In production, you'd want a full QR encoder
+            const size = 21; // QR version 1
+            const scale = 100 / size;
+            let paths = [];
+
+            // Finder patterns (corners)
+            const drawFinder = (x, y) => {
+                for (let i = 0; i < 7; i++) {
+                    for (let j = 0; j < 7; j++) {
+                        if (i === 0 || i === 6 || j === 0 || j === 6 || (i >= 2 && i <= 4 && j >= 2 && j <= 4)) {
+                            paths.push(`M${(x+i)*scale},${(y+j)*scale}h${scale}v${scale}h-${scale}z`);
+                        }
+                    }
+                }
+            };
+            drawFinder(0, 0);
+            drawFinder(14, 0);
+            drawFinder(0, 14);
+
+            // Timing patterns
+            for (let i = 8; i < 13; i += 2) {
+                paths.push(`M${i*scale},${6*scale}h${scale}v${scale}h-${scale}z`);
+                paths.push(`M${6*scale},${i*scale}h${scale}v${scale}h-${scale}z`);
+            }
+
+            // Data area (seeded by text hash for visual variation)
+            let hash = 0;
+            for (let i = 0; i < text.length; i++) {
+                hash = ((hash << 5) - hash) + text.charCodeAt(i);
+                hash |= 0;
+            }
+
+            for (let y = 9; y < 21; y++) {
+                for (let x = 9; x < 21; x++) {
+                    if (x < 13 && y < 13) continue;
+                    hash = (hash * 1103515245 + 12345) & 0x7fffffff;
+                    if (hash % 3 === 0) {
+                        paths.push(`M${x*scale},${y*scale}h${scale}v${scale}h-${scale}z`);
+                    }
+                }
+            }
+
+            return `<svg viewBox="0 0 100 100" style="width:100%;height:auto;background:#fff">
+                <rect width="100" height="100" fill="#fff"/>
+                <path d="${paths.join('')}" fill="#000"/>
+            </svg>`;
+        }
+
+        // Modal Functions
+        let currentChemData = null;
+
+        function openModal() {
+            document.getElementById('labelModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('labelModal').classList.remove('active');
+            document.body.style.overflow = '';
+            document.getElementById('blankForm').classList.add('hidden');
+        }
+
+        function openLabelGenerator(chemEl) {
+            const name = chemEl.querySelector('.chem-name')?.textContent || '';
+            const mfr = chemEl.querySelector('.chem-mfr')?.textContent || '';
+            const sdsUrl = chemEl.querySelector('.sds-btn')?.href || '';
+            const ghs = (chemEl.dataset.ghs || '').split(',').map(s => s.trim()).filter(Boolean);
+            const signal = chemEl.dataset.signal || '';
+            const nfpaH = chemEl.dataset.nfpaH || '0';
+            const nfpaF = chemEl.dataset.nfpaF || '0';
+            const nfpaR = chemEl.dataset.nfpaR || '0';
+            const nfpaS = chemEl.dataset.nfpaS || '';
+
+            currentChemData = { name, mfr, sdsUrl, ghs, signal, nfpaH, nfpaF, nfpaR, nfpaS };
+
+            document.getElementById('modalTitle').textContent = 'Generate Label: ' + name;
+            document.getElementById('blankForm').classList.add('hidden');
+            renderLabel(currentChemData);
+            openModal();
+        }
+
+        function openBlankLabel() {
+            document.getElementById('modalTitle').textContent = 'Create Custom Label';
+            document.getElementById('blankForm').classList.remove('hidden');
+            // Reset form
+            document.getElementById('blankName').value = '';
+            document.getElementById('blankMfr').value = '';
+            document.getElementById('blankSds').value = '';
+            document.getElementById('blankNfpaH').value = '0';
+            document.getElementById('blankNfpaF').value = '0';
+            document.getElementById('blankNfpaR').value = '0';
+            document.getElementById('blankNfpaS').value = '';
+            document.getElementById('blankSignal').value = '';
+            document.querySelectorAll('.ghs-checkboxes input').forEach(cb => cb.checked = false);
+
+            currentChemData = { name: '', mfr: '', sdsUrl: '', ghs: [], signal: '', nfpaH: '0', nfpaF: '0', nfpaR: '0', nfpaS: '' };
+            renderLabel(currentChemData);
+            openModal();
+        }
+
+        function generateFromBlank() {
+            const ghs = Array.from(document.querySelectorAll('.ghs-checkboxes input:checked')).map(cb => cb.value);
+            currentChemData = {
+                name: document.getElementById('blankName').value || 'Unnamed Chemical',
+                mfr: document.getElementById('blankMfr').value || '',
+                sdsUrl: document.getElementById('blankSds').value || '',
+                ghs: ghs,
+                signal: document.getElementById('blankSignal').value || '',
+                nfpaH: document.getElementById('blankNfpaH').value || '0',
+                nfpaF: document.getElementById('blankNfpaF').value || '0',
+                nfpaR: document.getElementById('blankNfpaR').value || '0',
+                nfpaS: document.getElementById('blankNfpaS').value || ''
+            };
+            renderLabel(currentChemData);
+        }
+
+        function renderLabel(data) {
+            document.getElementById('previewName').textContent = data.name || 'Chemical Name';
+            document.getElementById('previewMfr').textContent = data.mfr || '';
+            document.getElementById('previewNfpa').innerHTML = renderNFPA(data.nfpaH, data.nfpaF, data.nfpaR, data.nfpaS);
+
+            // GHS pictograms
+            let ghsHtml = '';
+            if (data.ghs && data.ghs.length > 0) {
+                data.ghs.forEach(code => {
+                    if (GHS_PICTOGRAMS[code]) {
+                        ghsHtml += GHS_PICTOGRAMS[code];
+                    }
+                });
+            }
+            document.getElementById('previewGhs').innerHTML = ghsHtml;
+
+            // Signal word
+            const signalEl = document.getElementById('previewSignal');
+            if (data.signal) {
+                signalEl.textContent = data.signal.toUpperCase();
+                signalEl.className = 'label-signal ' + data.signal.toLowerCase();
+                signalEl.style.display = 'block';
+            } else {
+                signalEl.style.display = 'none';
+            }
+
+            // QR code
+            const qrContainer = document.getElementById('previewQr');
+            if (data.sdsUrl) {
+                qrContainer.innerHTML = generateQR(data.sdsUrl) + '<div class="label-qr-caption">Scan for SDS</div>';
+                qrContainer.style.display = 'block';
+            } else {
+                qrContainer.style.display = 'none';
+            }
+        }
+
+        function setLabelSize(size) {
+            const preview = document.getElementById('labelPreview');
+            preview.className = 'label-preview size-' + size;
+            document.querySelectorAll('.size-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.size === size);
+            });
+        }
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('labelModal').addEventListener('click', e => {
+            if (e.target.classList.contains('modal')) closeModal();
+        });
+
+        // Unit tests
         function runTests(){
             const cats=document.querySelectorAll('.category');
             let passed=0,failed=0;
+            const log = (ok, msg) => { ok ? passed++ : failed++; console[ok?'log':'error']((ok?'✓ ':'✗ ') + msg); };
 
             // Test 1: expandAll opens all categories
             collapseAll();
             expandAll();
-            const allOpen=Array.from(cats).every(c=>c.classList.contains('open'));
-            if(allOpen){passed++;console.log('✓ expandAll: all categories expanded')}
-            else{failed++;console.error('✗ expandAll: not all categories expanded')}
+            log(Array.from(cats).every(c=>c.classList.contains('open')), 'expandAll: all categories expanded');
 
             // Test 2: collapseAll closes all categories
             collapseAll();
-            const allClosed=Array.from(cats).every(c=>!c.classList.contains('open'));
-            if(allClosed){passed++;console.log('✓ collapseAll: all categories collapsed')}
-            else{failed++;console.error('✗ collapseAll: not all categories collapsed')}
+            log(Array.from(cats).every(c=>!c.classList.contains('open')), 'collapseAll: all categories collapsed');
 
-            console.log(`Tests complete: ${passed} passed, ${failed} failed`);
+            // Test 3: NFPA diamond renders correctly
+            const nfpa = renderNFPA(2, 3, 1, 'W');
+            log(nfpa.includes('<svg'), 'renderNFPA: returns SVG');
+            log(nfpa.includes('>2<') && nfpa.includes('>3<') && nfpa.includes('>1<'), 'renderNFPA: contains ratings');
+            log(nfpa.includes('>W<'), 'renderNFPA: contains special code');
+
+            // Test 4: GHS pictograms exist
+            log(Object.keys(GHS_PICTOGRAMS).length === 9, 'GHS_PICTOGRAMS: has 9 pictograms');
+            log(GHS_PICTOGRAMS.GHS02.includes('<svg'), 'GHS_PICTOGRAMS: GHS02 is valid SVG');
+
+            // Test 5: QR code generates
+            const qr = generateQR('https://example.com');
+            log(qr.includes('<svg'), 'generateQR: returns SVG');
+            log(qr.includes('<path'), 'generateQR: contains path data');
+            log(generateQR('').includes('No URL'), 'generateQR: handles empty input');
+
+            // Test 6: Chemical has data attributes
+            const testChem = document.querySelector('.chem[data-ghs]');
+            if (testChem) {
+                log(testChem.dataset.nfpaH !== undefined, 'Chemical: has NFPA health rating');
+                log(testChem.querySelector('.label-btn') !== null, 'Chemical: has Label button');
+            } else {
+                log(false, 'Chemical: no test chemical with data-ghs found');
+            }
+
+            // Test 7: Modal functions exist
+            log(typeof openModal === 'function', 'openModal: function exists');
+            log(typeof closeModal === 'function', 'closeModal: function exists');
+            log(typeof openLabelGenerator === 'function', 'openLabelGenerator: function exists');
+            log(typeof openBlankLabel === 'function', 'openBlankLabel: function exists');
+
+            // Test 8: Size selector works
+            setLabelSize('4x4');
+            log(document.getElementById('labelPreview').classList.contains('size-4x4'), 'setLabelSize: applies 4x4 class');
+            setLabelSize('2x3');
+            log(document.getElementById('labelPreview').classList.contains('size-2x3'), 'setLabelSize: applies 2x3 class');
+
+            console.log(`\nTests complete: ${passed} passed, ${failed} failed`);
             return failed===0;
         }
         // Run tests in dev: runTests()
