@@ -249,6 +249,30 @@
             padding:60px 20px;
             color:var(--text-dim);
         }
+
+        /* EXPAND/COLLAPSE CONTROLS */
+        .controls{
+            display:flex;
+            gap:8px;
+            margin-bottom:12px;
+        }
+        .controls button{
+            padding:6px 12px;
+            font-size:0.75rem;
+            font-family:inherit;
+            font-weight:500;
+            background:var(--bg-card);
+            color:var(--text-dim);
+            border:1px solid var(--border);
+            border-radius:6px;
+            cursor:pointer;
+            transition:all 0.15s;
+        }
+        .controls button:hover{
+            background:var(--bg-hover);
+            color:var(--white);
+            border-color:var(--purple);
+        }
     </style>
 </head>
 <body>
@@ -276,6 +300,10 @@
     <main>
         <!-- FULL INDEX -->
         <div class="section-label">Full Index</div>
+        <div class="controls">
+            <button onclick="expandAll()">Expand All</button>
+            <button onclick="collapseAll()">Collapse All</button>
+        </div>
 
         <!-- ADHESIVES & SEALANTS -->
         <div class="category">
@@ -1080,6 +1108,14 @@
     <script>
         function toggle(h){h.parentElement.classList.toggle('open')}
 
+        function expandAll(){
+            document.querySelectorAll('.category').forEach(cat=>cat.classList.add('open'));
+        }
+
+        function collapseAll(){
+            document.querySelectorAll('.category').forEach(cat=>cat.classList.remove('open'));
+        }
+
         function search(){
             const q=document.getElementById('searchInput').value.toLowerCase().trim();
             const items=document.querySelectorAll('.chem');
@@ -1115,6 +1151,29 @@
         document.getElementById('searchInput').addEventListener('keypress',e=>{
             if(e.key==='Enter')search();
         });
+
+        // Unit test for expand/collapse functionality
+        function runTests(){
+            const cats=document.querySelectorAll('.category');
+            let passed=0,failed=0;
+
+            // Test 1: expandAll opens all categories
+            collapseAll();
+            expandAll();
+            const allOpen=Array.from(cats).every(c=>c.classList.contains('open'));
+            if(allOpen){passed++;console.log('✓ expandAll: all categories expanded')}
+            else{failed++;console.error('✗ expandAll: not all categories expanded')}
+
+            // Test 2: collapseAll closes all categories
+            collapseAll();
+            const allClosed=Array.from(cats).every(c=>!c.classList.contains('open'));
+            if(allClosed){passed++;console.log('✓ collapseAll: all categories collapsed')}
+            else{failed++;console.error('✗ collapseAll: not all categories collapsed')}
+
+            console.log(`Tests complete: ${passed} passed, ${failed} failed`);
+            return failed===0;
+        }
+        // Run tests in dev: runTests()
     </script>
 </body>
 </html>
